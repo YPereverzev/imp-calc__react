@@ -1,7 +1,7 @@
 import React, {useState, useMemo} from 'react';
 import Navigation from '../navigation';
-import Provider from '../provider'
-// console.log(ImportItemsService);
+import Provider from '../provider';
+import PropTypes from 'prop-types';
 
 function Exporters (props) {
     const [activeExporterId, setActiveExporter] = useState(props.exporters[0].id)
@@ -11,9 +11,9 @@ function Exporters (props) {
                 (exporter) => activeExporterId === exporter.id
         ),
         [activeExporterId, props.exporters])
-
     return (
         <div>
+            {/* <p>{props.exporters}</p> */}
             <Navigation 
                 products={props.exporters}
                 onImporterClick={setActiveExporter}
@@ -23,5 +23,11 @@ function Exporters (props) {
         </div>
     );
 };
+
+Exporters.propTypes = {
+        exporters: PropTypes.arrayOf(PropTypes.shape({
+            providerName: PropTypes.string.isRequired
+        })).isRequired
+    };
 
 export default Exporters;

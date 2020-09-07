@@ -1,6 +1,7 @@
 import React from 'react';
 import Products from '../products';
 import Feedbacks from '../feedbacks'
+import PropTypes from "prop-types";
 
 function provider(props) {
     return (
@@ -9,6 +10,10 @@ function provider(props) {
             <Feedbacks activeExporter={props.activeExporter}/>
         </div>
     );
+}
+
+provider.propTypes = {
+    activeExporter: PropTypes.object.isRequired
 }
 
 export default provider;

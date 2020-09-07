@@ -2,7 +2,7 @@
 
 const ImportItemsService = [
   {
-    id : '12341234-2341234',
+    id :'12341234-2341234',
     providerName: "ImpExp LTD", 
     location : 'EU, Germany',
     image : 'https://.....',
@@ -27,7 +27,7 @@ const ImportItemsService = [
         "pricePerPc": 7,
         "weightPerPc" : 2.5,
         "nameOfPc" : "цилиндры",
-        "id" : 3,
+        "id" : '3',
       },
     ],
     experience :[

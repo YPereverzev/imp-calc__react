@@ -1,9 +1,9 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import ImportedItems from '../importedItems';
 
 export default function Products (props){
-   
+    debugger;
     return (
             <div>
                 {props.exporter.products.map(item => {
@@ -19,7 +19,10 @@ export default function Products (props){
     
 }
 
-// products.propTypes = {
-
-// };
+Products.propTypes = {
+    exporter: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        products: PropTypes.arrayOf(PropTypes.object)
+    })
+};
 

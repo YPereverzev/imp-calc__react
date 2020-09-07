@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes, { arrayOf } from "prop-types";
 
 function Navigation(props) {
     return (
@@ -20,5 +21,12 @@ function Navigation(props) {
         </div>
     );
 }
+
+Navigation.propTypes = {
+    products: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string.isRequired
+    }))
+}
+ 
 
 export default Navigation;
