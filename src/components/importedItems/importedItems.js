@@ -1,16 +1,23 @@
 import React from 'react';
-import counter from '../../hocs/counter';
+// import counter from '../../hocs/counter';
 import PropTypes from "prop-types";
+import { connect } from 'react-redux';
+import { decrement, increment } from '../../redux/actions';
 
 function ImportedItems (props) {
     // debugger;
+    // console.log('amount: ', props.amount)
+    const amount = props.order;
+
     return (
-        <div>
+        <div data-test-id="ImportedItems">
             <p>nameOfPc {props.item.nameOfPc}</p>
             <p>pricePerPc {props.item.pricePerPc} usd</p>
-            <button onClick={props.increment}>+</button> 
-            qty:  {props.qty}
-            <button onClick={props.decrement}>-</button>
+            <button onClick={() => props.increment(props.item.id)}>+</button> 
+            {/* qty: {props.qty} */}
+            <button onClick={() => props.decrement(props.item.id)}>-</button>
+            <p> amount: {amount} </p>  
+            {/* <p> amount: {props.amount} </p>   */}
             <p>_______________________________________________</p>   
         </div>
     );
@@ -22,7 +29,23 @@ ImportedItems.propType = {
         nameOfPc: PropTypes.number.isRequired,
         increment: PropTypes.func.isRequired,
         decrement: PropTypes.func.isRequired
-    })
+    }).isRequired
+} 
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        increment: (id) => dispatch(increment(id)),
+        decrement: (id) => dispatch(decrement(id))
+
+    }
 }
 
-export default counter(ImportedItems);
+const mapStateToProps = (state, ownProps) => ({
+    order : state.order[ownProps.item.id] || 0
+});
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(ImportedItems);
+
+// export default counter(ImportedItems);

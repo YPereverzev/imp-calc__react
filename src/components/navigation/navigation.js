@@ -25,7 +25,7 @@ function Navigation(props) {
 Navigation.propTypes = {
     products: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.string.isRequired
-    }))
+    })).isRequired
 }
  
 

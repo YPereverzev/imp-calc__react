@@ -2,16 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Rate(props) {
-    // debugger;
     return (
         <div>
-            RATE: {props.activeExporter.experience.reduce((sum, item) => {
-                    // debugger;
-                    return sum + item.rating
-                    }, 0
-                )/props.activeExporter.experience.length}
+            RATE: {rateCalc({...props})}
+
         </div>
     );
+}
+
+function rateCalc ({activeExporter}) {
+
+    return activeExporter.experience.reduce((sum, item) => {
+        return sum + item.rating
+        }, 0
+    )/activeExporter.experience.length
 }
 
 Rate.propTypes = {
@@ -19,7 +23,7 @@ Rate.propTypes = {
         experience: PropTypes.arrayOf(PropTypes.shape({
                 rating: PropTypes.number
             })
-        )
+        ).isRequired
     }).isRequired
 };
 

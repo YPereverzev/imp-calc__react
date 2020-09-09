@@ -1,4 +1,15 @@
-import Enzyme from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import React from 'react';
 
-Enzyme.configure({ adapter: new Adapter() });
+import ImportedItems from './importedItems';
+import { ImportItemsService } from '../../fixtures';
+
+const item = ImportItemsService[0].products[0];
+
+
+describe('ImportItemsService', () => {
+    it('ImportItemsService should render', () => {
+        // debugger;
+        const component = mount(<ImportedItems item={item} />);
+        expect(component.find(`[data-test-id="ImportedItems"]`).length).toBe(1);
+    });
+});

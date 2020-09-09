@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import ImportedItems from '../importedItems';
 
 export default function Products (props){
-    debugger;
+    // debugger;
     return (
             <div>
                 {props.exporter.products.map(item => {
                     return (
                         <div key={item.nameOfPc}>
-                            <ImportedItems item={item}/>
+                            <ImportedItems item={item} />
                             
                         </div>
                     )
@@ -22,7 +22,7 @@ export default function Products (props){
 Products.propTypes = {
     exporter: PropTypes.shape({
         id: PropTypes.string.isRequired,
-        products: PropTypes.arrayOf(PropTypes.object)
+        products: PropTypes.arrayOf(PropTypes.object).isRequired
     })
 };
 
