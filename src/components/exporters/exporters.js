@@ -2,6 +2,7 @@ import React, {useState, useMemo} from 'react';
 import Navigation from '../navigation';
 import Provider from '../provider';
 import PropTypes from 'prop-types';
+import styles from './exporters.module.css';
 
 function Exporters (props) {
     const [activeExporterId, setActiveExporter] = useState(props.exporters[0].id)
@@ -11,8 +12,10 @@ function Exporters (props) {
                 (exporter) => activeExporterId === exporter.id
         ),
         [activeExporterId, props.exporters])
+
     return (
-        <div>
+        
+        <div className={styles.exporters}>
             {/* <p>{props.exporters}</p> */}
             <Navigation 
                 products={props.exporters}

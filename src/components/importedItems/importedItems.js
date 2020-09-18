@@ -5,8 +5,6 @@ import { connect } from 'react-redux';
 import { decrement, increment } from '../../redux/actions';
 
 function ImportedItems (props) {
-    // debugger;
-    // console.log('amount: ', props.amount)
     const amount = props.order;
 
     return (
@@ -14,10 +12,8 @@ function ImportedItems (props) {
             <p>nameOfPc {props.item.nameOfPc}</p>
             <p>pricePerPc {props.item.pricePerPc} usd</p>
             <button onClick={() => props.increment(props.item.id)}>+</button> 
-            {/* qty: {props.qty} */}
             <button onClick={() => props.decrement(props.item.id)}>-</button>
             <p> amount: {amount} </p>  
-            {/* <p> amount: {props.amount} </p>   */}
             <p>_______________________________________________</p>   
         </div>
     );
@@ -26,7 +22,7 @@ function ImportedItems (props) {
 ImportedItems.propType = {
     item: PropTypes.shape({
         nameOfPc: PropTypes.string.isRequired,
-        nameOfPc: PropTypes.number.isRequired,
+        pricePerPc: PropTypes.number.isRequired,
         increment: PropTypes.func.isRequired,
         decrement: PropTypes.func.isRequired
     }).isRequired
@@ -45,7 +41,4 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 
-
 export default connect(mapStateToProps, mapDispatchToProps)(ImportedItems);
-
-// export default counter(ImportedItems);

@@ -1,12 +1,9 @@
-import { combineReducers } from 'redux'
+import { combineReducers } from 'redux';
 import orderReducer from './order';
-
+import importItems from './importitems';
 
 export default combineReducers({
-    order: orderReducer,
-    myTestFunc: () => {
-        console.log('done');
-        return 'Reduce done';
-    }
+   order: orderReducer,
+   importItems : importItems
 }) 
 // 

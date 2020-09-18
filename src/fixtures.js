@@ -12,7 +12,7 @@ const ImportItemsService = [
         "pricePerPc": 11,
         "weightPerPc" : 0.5,
         "nameOfPc" : "турбины",
-        "id" : 1,
+        "id" : "01",
       }
         ,
       {
@@ -20,14 +20,14 @@ const ImportItemsService = [
         "pricePerPc": 7,
         "weightPerPc" : 2.5,
         "nameOfPc" : "патрубки",
-        "id" : 2,
+        "id" : "02",
       },
       {
         "volumePerPc" : 0.2,
         "pricePerPc": 7,
         "weightPerPc" : 2.5,
         "nameOfPc" : "цилиндры",
-        "id" : '3',
+        "id" : "03",
       },
     ],
     experience :[
@@ -59,7 +59,7 @@ const ImportItemsService = [
         "pricePerPc": 211,
         "weightPerPc" : 20.5,
         "nameOfPc" : "2турбины",
-        "id" : 21,
+        "id" : "21",
       }
         ,
       {
@@ -67,7 +67,7 @@ const ImportItemsService = [
         "pricePerPc": 27,
         "weightPerPc" : 22.5,
         "nameOfPc" : "2патрубки",
-        "id" : 22,
+        "id" : "22",
       },
     ],
     experience : [

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Exporters from './exporters';
-import ImportItemsService from '../fixtures'
+import ImportItemsService from '../fixtures';
+import OrderBox from './orderbox';
 
 const log = console.log.bind(console);
 
@@ -26,10 +27,12 @@ class App extends Component {
             <div>
                 <h1> Import calc</h1>
                 {/* <Header /> */}
-                {/* <Order /> */}
-                <Exporters exporters={ImportItemsService}/>
-                <h1> {this.state.value}</h1>
-                <button onClick={() => this.setState({value : this.state.value + 1 })}> MyButton2 </button>
+                
+                <Exporters 
+                    exporters={ImportItemsService}
+                />
+                
+                <OrderBox />
             </div>
         );
     }
