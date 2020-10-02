@@ -3,9 +3,11 @@ import { connect } from 'react-redux';
 
 import OrderedItems from '../ordereditems'
 import styles from './order-box.module.css';
-
+import { orderBoxSelector } from '../../redux/reducer/selectors';
 
 function OrderBox(props) {
+    console.log('render OrderBox');
+
     const allSubSums = props.orderedItemsForNow || [];
     return (
         <div className={styles.orderBox}>
@@ -33,16 +35,9 @@ function OrderBox(props) {
 
 
 export default connect((state) => {
-    const  allImportedItems = state.importItems.flatMap((item) => item.products);
-    const  allOrderedItemsKeys = Object.keys(state.order);
-    const keysArr =  allOrderedItemsKeys.filter(key => state.order[key] > 0);
+    console.log('connect OrderBox');
 
-    let orderedItemsForNow = keysArr.map((key) => {
-        return allImportedItems.filter((item) => item.id == key)
-            // ) && (state.order[key] > 0))
-    });
-
-    return {orderedItemsForNow: orderedItemsForNow.flatMap(item => item),
+    return {orderedItemsForNow: orderBoxSelector(state),
             order: state.order 
             };
 })(OrderBox);

@@ -4,6 +4,7 @@ import importItems from './importitems';
 
 export default combineReducers({
    order: orderReducer,
-   importItems : importItems
+   importItems : importItems,
+   foo: (infa = 'start') => infa + 'a'
 }) 
 // 
