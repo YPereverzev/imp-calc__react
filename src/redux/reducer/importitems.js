@@ -1,4 +1,4 @@
-import ImportItemsService from '../../fixtures'
+import { ImportItemsService}  from '../../fixtures'
 
 
 export default (importItems = ImportItemsService, action) => {
@@ -7,7 +7,6 @@ export default (importItems = ImportItemsService, action) => {
     switch (type) {
         default: 
         return importItems;
-            break;
     }
 
 }

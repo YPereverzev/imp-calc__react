@@ -1,6 +1,6 @@
 import React, {useState, useMemo} from 'react';
 import Navigation from '../navigation';
-import Provider from '../provider';
+import Exporter from '../exporter';
 import PropTypes from 'prop-types';
 import styles from './exporters.module.css';
 
@@ -12,7 +12,6 @@ function Exporters (props) {
                 (exporter) => activeExporterId === exporter.id
         ),
         [activeExporterId, props.exporters])
-
     return (
         
         <div className={styles.exporters}>
@@ -21,7 +20,7 @@ function Exporters (props) {
                 products={props.exporters}
                 onImporterClick={setActiveExporter}
             />
-            <Provider activeExporter={activeExporter}/>
+            <Exporter activeExporter={activeExporter}/>
             
         </div>
     );
@@ -29,7 +28,7 @@ function Exporters (props) {
 
 Exporters.propTypes = {
         exporters: PropTypes.arrayOf(PropTypes.shape({
-            providerName: PropTypes.string.isRequired
+            exporterName: PropTypes.string.isRequired
         })).isRequired
     };
 

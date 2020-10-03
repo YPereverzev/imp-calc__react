@@ -10,10 +10,10 @@ function Navigation(props) {
                  console.log(item);
                     return (
                         <div key={item.id}>
-                            <button className="Exporters__provider-select-button"
+                            <button className="Exporters__exporter-select-button"
                                 onClick={() => props.onImporterClick(item.id)}
                             > 
-                                providerName : {item.providerName}
+                                exporterName : {item.exporterName}
                             </button>
                         </div>)
                 })} 
