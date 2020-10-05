@@ -3,7 +3,6 @@ import Rate from '../rate';
 import PropTypes from "prop-types";
 
 function Feedbacks(props) {
-    // debugger;
     return (
         <div>
             <Rate activeExporter={props.activeExporter}/>

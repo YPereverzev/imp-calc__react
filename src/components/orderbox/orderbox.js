@@ -8,7 +8,6 @@ import { orderBoxSelector } from '../../redux/reducer/selectors';
 function OrderBox(props) {
     console.log('render OrderBox');
 
-    const allSubSums = props.orderedItemsForNow || [];
     return (
         <div className={styles.orderBox}>
             <h2>ORDER</h2>
@@ -36,6 +35,7 @@ function OrderBox(props) {
 
 export default connect((state) => {
     console.log('connect OrderBox');
+    // debugger;
 
     return {orderedItemsForNow: orderBoxSelector(state),
             order: state.order 

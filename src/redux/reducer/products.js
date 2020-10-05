@@ -1,6 +1,10 @@
 import { normalizedProducts } from '../../fixtures';
 
-export default (products = normalizedProducts, action) => {
+const toObjProducts = normalizedProducts.reduce(
+    (acc, product) => ({...acc, [product.id]: product}), {}
+);
+
+export default (products = toObjProducts, action) => {
     const { type } = action;
     
     switch (type) {

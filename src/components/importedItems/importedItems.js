@@ -36,9 +36,14 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-const mapStateToProps = (state, ownProps) => ({
-    order : state.order[ownProps.item.id] || 0
-});
+
+//я получил id продукта вместо продукта
+const mapStateToProps = (state, ownProps) => {
+    return{
+        item : state.products[ownProps.id]
+    };
+
+}
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(ImportedItems);

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import styles from './exporters.module.css';
 
 function Exporters (props) {
-    const [activeExporterId, setActiveExporter] = useState(props.exporters[0].id)
+    const [activeExporterId, setActiveExporter] = useState(props.exporters[0].id);
     const activeExporter = useMemo (
         () =>
             props.exporters.find(

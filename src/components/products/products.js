@@ -6,10 +6,10 @@ export default function Products (props){
     // debugger;
     return (
             <div>
-                {props.exporter.products.map(item => {
+                {props.exporter.products.map(id => {
                     return (
-                        <div key={item.nameOfPc}>
-                            <ImportedItems item={item} />
+                        <div key={id}>
+                            <ImportedItems id={id} />
                             
                         </div>
                     )
