@@ -13,7 +13,6 @@ export const ImportItemsService = [
 
     ],
     experience :[
-      // shipmentId: 
       '5909796d-5030-4e36-adec-68b8f9ec2d196',
       '5909796d-5030-4e36-adec-68b8f9ec2d96',
       '429dea85-11dd-4054-a31e-c60c92e17255',
@@ -40,6 +39,7 @@ export const normalizedProducts = [
     "weightPerPc" : 0.5,
     "nameOfPc" : "турбины",
     "id" : "01",
+    "equipment": ["турбины", "инструкция"]
   }
     ,
   {
@@ -48,6 +48,7 @@ export const normalizedProducts = [
     "weightPerPc" : 2.5,
     "nameOfPc" : "патрубки",
     "id" : "02",
+    "equipment": ["патрубки", "инструкция"]
   },
   {
     "volumePerPc" : 0.2,
@@ -55,46 +56,78 @@ export const normalizedProducts = [
     "weightPerPc" : 2.5,
     "nameOfPc" : "цилиндры",
     "id" : "03",
+    "equipment": ["цилиндры", "инструкция"]
   },
   {
     "id" : "21",
     "volumePerPc" : 20.1,
     "pricePerPc": 211,
     "weightPerPc" : 20.5,
-    "nameOfPc" : "2турбины",
+    "nameOfPc" : "каркас",
+    "equipment": ["каркас", "доп.усиления", "инструкция"]
   }
     ,
   {
     "volumePerPc" : 20.2,
     "pricePerPc": 27,
     "weightPerPc" : 22.5,
-    "nameOfPc" : "2патрубки",
+    "nameOfPc" : "глушитель титановый",
     "id" : "22",
+    "equipment": ["глушитель титановый", "крепления", "инструкция"]
   },
 ]
 
 
 export const normalizedExperience = [
   {
-    shipmentId: '5909796d-5030-4e36-adec-68b8f9ec2d196',
-    manager: 'Melony',
+    id: '5909796d-5030-4e36-adec-68b8f9ec2d196',
+    feedback: 'Great!',
+    managerId: '01a63cc0-5a6f-41f3-9774-0161ea4c9b0c',
     rating: 5,
   },
   {
-    shipmentId: '5909796d-5030-4e36-adec-68b8f9ec2d96',
-    manager: 'Antony',
+    id: '5909796d-5030-4e36-adec-68b8f9ec2d96',
+    feedback: 'It was very difficult to negotiate the delivery',
+    managerId: '02a63cc0-5a6f-41f3-9774-0161ea4c9b0c',
     rating: 5,
   },
   {
-    shipmentId: '429dea85-11dd-4054-a31e-c60c92e17255',
-    manager: 'Sam',
+    id: '429dea85-11dd-4054-a31e-c60c92e17255',
+    feedback: 'Another minor shortage',
+    managerId: '03a63cc0-5a6f-41f3-9774-0161ea4c9b0c',
     rating: 3,
   },
   {
-    shipmentId: '5909796d-5030-4e36-adec-68b8f9ec2d96',
-    manager: 'Antony',
+    id: '5909796d-5030-4e36-adec-68b8f9ec2d96',
+    feedback: 'All goods in the delivery are defective',
+    managerId: '04a63cc0-5a6f-41f3-9774-0161ea4c9b0c',
     rating: 5,
   }
 
+];
+
+export const normalizedUsers = [
+  {
+    id: '00a63cc0-5a6f-41f3-9774-0161ea4c9b0c',
+    name: 'Agata',
+  },
+  {
+    id: '01a63cc0-5a6f-41f3-9774-0161ea4c9b0c',
+    name: 'Antony',
+  },
+  {
+    id: '02a63cc0-5a6f-41f3-9774-0161ea4c9b0c',
+    name: 'Sam',
+  },
+  {
+    id: '03a63cc0-5a6f-41f3-9774-0161ea4c9b0c',
+    name: 'Antony',
+  },
+  {
+    id: '04a63cc0-5a6f-41f3-9774-0161ea4c9b0c',
+    name: 'Petro',
+  },
 ]
+
+
 

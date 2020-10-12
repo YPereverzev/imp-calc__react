@@ -19,7 +19,7 @@ function OrderBox(props) {
                     id = {item.id}
                     name = {item.nameOfPc}
                     price = {item.pricePerPc}
-                    qty = {props.order[item.id]}
+                    qty = {qty}
                 />
             })
         }
@@ -35,7 +35,7 @@ function OrderBox(props) {
 
 export default connect((state) => {
     console.log('connect OrderBox');
-    // debugger;
+     ;
 
     return {orderedItemsForNow: orderBoxSelector(state),
             order: state.order 

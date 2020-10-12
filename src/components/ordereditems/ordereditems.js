@@ -5,7 +5,7 @@ import { increment, decrement, clearPosition } from '../../redux/actions';
 
 
 function Ordereditems(props) {
-    if (Object.keys(props.order).length == 0)  {
+    if (Object.keys(props.order).length === 0)  {
         return <p>Сделайте заказ</p>
     }
     

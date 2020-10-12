@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { decrement, increment } from '../../redux/actions';
 
 function ImportedItems (props) {
+     ;
     const amount = props.order;
 
     return (
@@ -40,7 +41,8 @@ const mapDispatchToProps = (dispatch) => {
 //я получил id продукта вместо продукта
 const mapStateToProps = (state, ownProps) => {
     return{
-        item : state.products[ownProps.id]
+        item : state.products[ownProps.id],
+        order: state.order[ownProps.id] || 0,
     };
 
 }

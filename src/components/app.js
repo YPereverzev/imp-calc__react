@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Exporters from './exporters';
-import ImportItemsService from '../fixtures';
+import { ImportItemsService } from '../fixtures';
 import OrderBox from './orderbox';
 
 const log = console.log.bind(console);
@@ -8,8 +8,8 @@ const log = console.log.bind(console);
 
 class App extends Component {
     constructor(props) {
-        super(props)
-        this.state = {value : 11}
+        super(props);
+        this.state = {value : 11};
     }
 
     // state = {value : 1};
@@ -22,15 +22,14 @@ class App extends Component {
     }
 
     render() {
+        
         return (
             
             <div>
                 <h1> Import calc</h1>
                 {/* <Header /> */}
                 
-                <Exporters 
-                    exporters={ImportItemsService}
-                />
+                <Exporters />
                 
                 <OrderBox />
             </div>

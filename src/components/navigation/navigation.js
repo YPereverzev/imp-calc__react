@@ -1,12 +1,12 @@
 import React from 'react';
-import PropTypes, { arrayOf } from "prop-types";
+import PropTypes from "prop-types";
 
 function Navigation(props) {
     return (
         <div>
              {
                  props.products.map((item) => {
-                // debugger;
+                 ;
                  console.log(item);
                     return (
                         <div key={item.id}>

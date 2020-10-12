@@ -3,6 +3,8 @@ import Navigation from '../navigation';
 import Exporter from '../exporter';
 import PropTypes from 'prop-types';
 import styles from './exporters.module.css';
+import { connect } from 'react-redux';
+import { importItemsServiceSelector , usersSelector } from '../../redux/reducer/selectors';
 
 function Exporters (props) {
     const [activeExporterId, setActiveExporter] = useState(props.exporters[0].id);
@@ -12,17 +14,16 @@ function Exporters (props) {
                 (exporter) => activeExporterId === exporter.id
         ),
         [activeExporterId, props.exporters])
+
     return (
+    <div className={styles.exporters}>
+        <Navigation 
+            products={props.exporters}
+            onImporterClick={setActiveExporter}
+        />
+        <Exporter activeExporter={activeExporter}/>
         
-        <div className={styles.exporters}>
-            {/* <p>{props.exporters}</p> */}
-            <Navigation 
-                products={props.exporters}
-                onImporterClick={setActiveExporter}
-            />
-            <Exporter activeExporter={activeExporter}/>
-            
-        </div>
+    </div>
     );
 };
 
@@ -32,4 +33,8 @@ Exporters.propTypes = {
         })).isRequired
     };
 
-export default Exporters;
+const mapDispatchToProps = (state) =>({
+    exporters: importItemsServiceSelector(state),
+    users: usersSelector(state)
+})
+export default connect(mapDispatchToProps)(Exporters);
