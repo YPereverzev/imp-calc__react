@@ -3,19 +3,19 @@ import React from 'react';
 import PropTypes from "prop-types";
 import { connect } from 'react-redux';
 import { decrement, increment } from '../../redux/actions';
+import styles from './Importeditems.module.css';
 
 function ImportedItems (props) {
-     ;
     const amount = props.order;
 
     return (
-        <div data-test-id="ImportedItems">
-            <p>nameOfPc {props.item.nameOfPc}</p>
-            <p>pricePerPc {props.item.pricePerPc} usd</p>
+        <div className={styles.importedItems}
+        data-test-id="ImportedItems">
+            <p>{props.item.nameOfPc}</p>
+            <p> {props.item.pricePerPc} $</p>
             <button onClick={() => props.increment(props.item.id)}>+</button> 
             <button onClick={() => props.decrement(props.item.id)}>-</button>
             <p> amount: {amount} </p>  
-            <p>_______________________________________________</p>   
         </div>
     );
 }

@@ -1,0 +1,6 @@
+.orderBox {
+    display: inline-block;
+    vertical-align: top;
+    width: 400px;
+    max-width: 30%; 
+}

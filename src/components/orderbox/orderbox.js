@@ -25,7 +25,7 @@ function OrderBox(props) {
         }
             <h3>Итого к оплате: {props.orderedItemsForNow.reduce((sum = 0, item = 0) => 
                     sum + item.pricePerPc * props.order[item.id], 0
-                )} 
+                )} {` `}
                 долл
             </h3>
 

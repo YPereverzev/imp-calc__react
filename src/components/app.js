@@ -1,7 +1,9 @@
+
+import 'normalize.css';
 import React, { Component } from 'react';
 import Exporters from './exporters';
-import { ImportItemsService } from '../fixtures';
 import OrderBox from './orderbox';
+
 
 const log = console.log.bind(console);
 
@@ -25,9 +27,12 @@ class App extends Component {
         
         return (
             
-            <div>
-                <h1> Import calc</h1>
-                {/* <Header /> */}
+            <div >
+                <header>
+                    <h1>
+                        Import calc 
+                    </h1>
+                </header>
                 
                 <Exporters />
                 

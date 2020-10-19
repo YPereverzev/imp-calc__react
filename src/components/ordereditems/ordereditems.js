@@ -2,6 +2,7 @@ import React from 'react';
 // import PropTypes from "prop-types";
 import { connect } from 'react-redux';
 import { increment, decrement, clearPosition } from '../../redux/actions';
+import styles from './ordereditems.module.css';
 
 
 function Ordereditems(props) {
@@ -10,13 +11,31 @@ function Ordereditems(props) {
     }
     
     return (
-        <div>
-            <p>Название: {props.name}, id: {props.id}</p>
-            <p>Кличество {props.qty} шт </p>
-            <b><p>ИТОГО: {props.qty * props.price} шт </p> </b>
-            <button onClick={() => props.increment(props.id)}>+</button>
-            <button onClick={() => props.decrement(props.id)}>-</button>
-            <button onClick={() => props.clearPosition(props.id)}>Х</button>
+        <div className={styles.ordereditems}>
+            <p> {props.name}:</p>
+            <div className={styles.editing}>
+                <button className={styles.item} 
+                    onClick={() => props.increment(props.id)}>
+                        +
+                </button>
+                <p className={styles.item}>{props.qty} </p>
+                <button className={styles.item} 
+                    onClick={() => props.decrement(props.id)}>
+                        -
+                </button>
+            </div>
+
+            <div>
+                <b className={styles.item}>
+                    <p>
+                        $ {props.qty * props.price} 
+                    </p> 
+                </b>
+                <button className={styles.item}
+                    onClick={() => props.clearPosition(props.id)}>
+                    Х
+                </button>
+            </div>
 
         </div>
     );
