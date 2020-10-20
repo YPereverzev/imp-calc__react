@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 import Exporters from './exporters';
 import OrderBox from './orderbox';
 
+import styles from '../app.module.css';
+
 
 const log = console.log.bind(console);
 
@@ -28,15 +30,18 @@ class App extends Component {
         return (
             
             <div >
-                <header>
-                    <h1>
+                <div className={styles.name}>
+                    <h1 >
                         Import calc 
                     </h1>
-                </header>
-                
-                <Exporters />
-                
-                <OrderBox />
+                </div>
+                <div className={styles.wrapper}>
+                    <div className={styles.content}>
+                        <Exporters />
+                        <OrderBox />
+                    </div>
+
+                </div>
             </div>
         );
     }

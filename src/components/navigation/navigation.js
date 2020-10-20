@@ -6,16 +6,18 @@ import styles from './navigation.module.css';
 function Navigation(props) {
     return (
         <div className={styles.navigation}>
+            <p>
+                Поставщики:
+            </p>
              {
                  props.products.map((item) => {
-                 ;
                  console.log(item);
                     return (
-                        <div key={item.id}>
-                            <button className="Exporters__exporter-select-button"
+                        <div  className={styles.wrapper} key={item.id}>
+                            <button className={styles.nav_button} 
                                 onClick={() => props.onImporterClick(item.id)}
                             > 
-                                exporterName : {item.exporterName}
+                                {item.exporterName}
                             </button>
                         </div>)
                 })} 

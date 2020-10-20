@@ -1,4 +1,5 @@
 .exporters {
     display: inline-block;
-    
+    border: none;
+    background-color: #EEE;
 }

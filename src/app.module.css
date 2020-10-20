@@ -1,0 +1,25 @@
+.wrapper {
+ width: 100vh;
+ margin: 0 auto;
+
+}
+
+
+.name {
+  color: black;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 2fr 3fr; 
+}
+
+.name {
+  text-align: center;
+}
+
+.name h1{
+  background-color: gray;
+  padding: 1em;
+  vertical-align: middle;
+}

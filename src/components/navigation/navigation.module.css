@@ -1,4 +1,14 @@
-.AddFeedback {
+.navigation {
     background-color: #AAA;
-    color: blue;
+    margin: 0px 20px 0px 20px;
 }
+
+.nav_button {
+    color: grey;
+}
+
+.wrapper {
+    padding: 5px;
+    display: inline-block;
+}
+
