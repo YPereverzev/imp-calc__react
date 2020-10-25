@@ -9,19 +9,25 @@ function Navigation(props) {
             <p>
                 Поставщики:
             </p>
-             {
-                 props.products.map((item) => {
-                 console.log(item);
-                    return (
-                        <div  className={styles.wrapper} key={item.id}>
-                            <button className={styles.nav_button} 
-                                onClick={() => props.onImporterClick(item.id)}
-                            > 
-                                {item.exporterName}
-                            </button>
-                        </div>)
-                })} 
+            <div  className={styles.wrapper} >
+                <form  method="post"><p>
+                    <select size="3" multiple name="hero[]">
+                    {props.products.map((item) => {
+                        console.log(item);
+                            return (
+                            <option 
+                                className={styles.nav_button}
+                                key={item.id} onClick={() => props.onImporterClick(item.id)}>
+                                    {item.exporterName}
+                                </option>
+                            )
+                    })} 
 
+                    </select></p>
+                <p><input type="submit" value="Отправить"></input></p>
+                </form>
+                <p></p>
+                </div>
         </div>
     );
 }

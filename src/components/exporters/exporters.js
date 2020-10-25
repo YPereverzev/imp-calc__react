@@ -34,8 +34,8 @@ Exporters.propTypes = {
         })).isRequired
     };
 
-const mapDispatchToProps = (state) =>({
+const mapStateToProps = (state) =>({
     exporters: importItemsServiceSelector(state),
     users: usersSelector(state)
 })
-export default connect(mapDispatchToProps)(Exporters);
+export default connect(mapStateToProps)(Exporters);

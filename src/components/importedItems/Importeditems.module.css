@@ -1,6 +1,30 @@
 .importedItems {
     min-width: 400px;
     margin: 10px 20px 10px 20px;
-    border: 1px solid gray;
-    padding: 10px;
+    /* border: 1px solid gray; */
+    background-color: #EEE;
+    padding: 15px;
+    border-radius: 7px;
+}
+
+.volume, .weight  {
+    /* width: 100px; */
+    padding-left: 10px;
+    display: inline-block;
+    background-color: #fff;
+}
+
+
+.volume_weight_container {
+    display: grid;
+    grid-template-columns: 10fr 15px 10fr;
+    justify-content: start;
+    margin-bottom: 15px;
+    /* width: 100%; */
+}
+
+.state_regulation {
+    line-height: 2em;
+    padding-left: 10px;
+    background-color: #fff;
 }

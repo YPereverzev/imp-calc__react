@@ -3,6 +3,7 @@ import 'normalize.css';
 import React, { Component } from 'react';
 import Exporters from './exporters';
 import OrderBox from './orderbox';
+import ExchangeRates from './exchangeRates';
 
 import styles from '../app.module.css';
 
@@ -34,6 +35,8 @@ class App extends Component {
                     <h1 >
                         Import calc 
                     </h1>
+
+                    <ExchangeRates />
                 </div>
                 <div className={styles.wrapper}>
                     <div className={styles.content}>

@@ -16,10 +16,12 @@
 
 .name {
   text-align: center;
+  position: relative;
 }
 
 .name h1{
   background-color: gray;
-  padding: 1em;
+  background: linear-gradient(to right, #fefcea, #888);
+  padding: 2em;
   vertical-align: middle;
 }
