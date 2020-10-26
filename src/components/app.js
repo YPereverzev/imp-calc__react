@@ -12,14 +12,13 @@ const log = console.log.bind(console);
 
 
 class App extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {value : 11};
     }
 
-    // state = {value : 1};
     componentDidMount() {
-        log('componentDidMountED')
+        log('componentDidMounted')
     }
 
     componentDidUpdate() {

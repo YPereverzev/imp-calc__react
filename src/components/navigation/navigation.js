@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from "prop-types";
 import styles from './navigation.module.css';
-
+import Search from './search';
 
 function Navigation(props) {
     return (
@@ -9,25 +9,8 @@ function Navigation(props) {
             <p>
                 Поставщики:
             </p>
-            <div  className={styles.wrapper} >
-                <form  method="post"><p>
-                    <select size="3" multiple name="hero[]">
-                    {props.products.map((item) => {
-                        console.log(item);
-                            return (
-                            <option 
-                                className={styles.nav_button}
-                                key={item.id} onClick={() => props.onImporterClick(item.id)}>
-                                    {item.exporterName}
-                                </option>
-                            )
-                    })} 
-
-                    </select></p>
-                <p><input type="submit" value="Отправить"></input></p>
-                </form>
-                <p></p>
-                </div>
+            <Search products={props.products} onImporterClick={props.onImporterClick}/>
+            
         </div>
     );
 }
