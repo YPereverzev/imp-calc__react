@@ -8,17 +8,13 @@ const Search = ( { products, onImporterClick } ) => {
     
     useEffect(() => {
         const search = document.getElementById('search');
-        // debugger;
         console.log(search);
         search.addEventListener('change', (event) => {
-            debugger;
             console.log(event.target.value);
             searchHandler(event, setFilteredImporters, products);
         });
     });
     
-
-    debugger;
     return (
         <div>
             <input 
@@ -37,7 +33,6 @@ const Search = ( { products, onImporterClick } ) => {
 
 const searchHandler = (event, setFilteredImporters, products) => {
     console.log('ищу');
-    debugger;
     if (!event) return products;
 
     const filteredProducts = products.filter((item) => {

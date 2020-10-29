@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './searchedimporters.module.css';
 
 const SearchedImporters = (props) => {
-    debugger;
+    
     return (
         <div>
             <div  className={styles.searchedImporters} >

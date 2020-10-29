@@ -6,8 +6,6 @@ import styles from './ordereditems.module.css';
 
 
 function Ordereditems(props) {
-    
-    
     return (
         <div className={styles.ordereditems}>
             <p> {props.name}:</p>
@@ -17,7 +15,6 @@ function Ordereditems(props) {
                         +
                 </button>
 
-                
                 <div className={styles.item}
                 onClick={qtyHandler}
                 >
@@ -48,7 +45,7 @@ function Ordereditems(props) {
 }
 
 const qtyHandler = (event) => {
-    // debugger;
+    
     console.log(event);
     // event.target.contenteditable="true";
     // contenteditable="true | false"

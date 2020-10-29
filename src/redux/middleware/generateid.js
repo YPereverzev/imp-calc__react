@@ -17,6 +17,6 @@ export default (store) => (next) => (action) => {
         ...rest,
         ...idGenerated
     }
-     ;
+
     next(result);
 }

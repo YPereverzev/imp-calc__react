@@ -1,11 +1,11 @@
 import { createSelector } from 'reselect';
- ;    
 
 // const selectImportItems = state => state.importItems;
 const orderSelector = state => state.order;
 const productsSelector = state => state.products;
 export const usersSelector = state => state.users;
 export const  experienceSelector = state => state.experience;
+export const exchangeRatesSelector = state => state.addExchangeRates;
 
 const ownPropsExperienceIdSelector = (_, ownProps) => {
     return ownProps.experienceId
@@ -18,7 +18,6 @@ const idSelector = (_, ownProps) => {
 };
 export const exporterSelector = createSelector(importItemsServiceSelector, idSelector,
     (importItems, id) => {
-        // debugger;
          const buff = importItems.find(
             (exporter) => exporter.id === id)
             return buff;
