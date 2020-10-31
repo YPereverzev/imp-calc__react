@@ -28,7 +28,10 @@ export const addFeedback = ({ feedbackInfo }) => {
     }
 };
 
-export const loadExchangeRates = () => ({
-    type: LOAD_EXCHANGE_RATES,
-    exchangeRatesAPI: 'https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5'
-})
+export const loadExchangeRates = () => {
+    // debugger;
+    return {
+        type: LOAD_EXCHANGE_RATES,
+        exchangeRatesAPI: 'https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5'
+    }
+}

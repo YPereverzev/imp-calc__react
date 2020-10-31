@@ -5,7 +5,12 @@ const orderSelector = state => state.order;
 const productsSelector = state => state.products;
 export const usersSelector = state => state.users;
 export const  experienceSelector = state => state.experience;
-export const exchangeRatesSelector = state => state.addExchangeRates;
+
+
+export const exchangeRatesSelector = state => state.addExchangeRates.entities;
+export const exchangeRatesLoading = state => state.loading;
+export const exchangeRatesLoaded = state => state.loaded;
+export const exchangeRatesError = state => state.error;
 
 const ownPropsExperienceIdSelector = (_, ownProps) => {
     return ownProps.experienceId

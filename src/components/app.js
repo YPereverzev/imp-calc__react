@@ -30,13 +30,21 @@ class App extends Component {
         return (
             
             <div >
-                <div className={styles.name}>
-                    <h1 >
-                        Import calc 
-                    </h1>
+                <div className={styles.header_container}>
 
-                    <ExchangeRates />
+                    <div className={styles.header}>
+                        
+                        <div className={styles.name}>
+                            <h1 >
+                                Import calc 
+                            </h1>
+                        </div>
+
+                            <ExchangeRates />
+
+                    </div>
                 </div>
+
                 <div className={styles.wrapper}>
                     <div className={styles.content}>
                         <Exporters />

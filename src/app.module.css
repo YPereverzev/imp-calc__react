@@ -4,9 +4,15 @@
 
 }
 
+.header {
+  position: relative;
+  background: linear-gradient(to right, #fefcea, #888);
+  height: 130px; 
+}
 
-.name {
-  color: black;
+.header_container {
+  margin: 20px 0xp 20px 0xp;
+  padding: 30px;
 }
 
 .content {
@@ -15,13 +21,20 @@
 }
 
 .name {
-  text-align: center;
-  position: relative;
+  top: 1em;
+  left: 50%;
+  transform: translate(-50%);
+  /* width: 50%; */
+  /* text-align: center; */
+  color: black;
+  vertical-align: middle;
+  margin: 0 auto;
+  position: absolute;
+  height: 100px;
+  width: 200px;
 }
 
 .name h1{
-  background-color: gray;
-  background: linear-gradient(to right, #fefcea, #888);
-  padding: 2em;
-  vertical-align: middle;
+  color: #123456;
+
 }

@@ -12,13 +12,21 @@ function Exporter(props) {
     if (selectedСomponent === 'Products') {
         return (
             <div className={styles.exporter}>
+                
+                <div className={styles.exporter_name}>
+                    <h2>{props.activeExporter.exporterName}</h2>
+                </div>
                 <Choice setComponent={setSelectedСomponent}/>
                 <Products exporter={props.activeExporter} />
             </div>
         );    
     } else { //then only 'Feedbacks'
         return (
-            <div>
+            <div className={styles.exporter}>
+                <div className={styles.exporter_name}>
+                    <h2>{props.activeExporter.exporterName}</h2>
+                </div>
+                
                 <Choice setComponent={setSelectedСomponent}/>
                 <Feedbacks activeExporter={props.activeExporter}/>
             </div>

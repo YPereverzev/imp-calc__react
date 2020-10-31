@@ -9,7 +9,9 @@
 .volume, .weight  {
     padding-left: 10px;
     display: inline-block;
-    background-color: #fff;
+    /* background-color: #fff; */
+    border-radius: 5px;
+    border: 1px solid #BBB;
 }
 
 
@@ -23,5 +25,6 @@
 .state_regulation {
     line-height: 2em;
     padding-left: 10px;
-    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #BBB;
 }

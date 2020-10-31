@@ -1,14 +1,20 @@
+import { FAILURE, REQUEST, SUCCESS } from "../constants";
+
+
 export default state => next => async action => {
     if (!action.exchangeRatesAPI) next(action);
     
-    const { exchangeRatesAPI, ...rest} = action;
-    // try {
+    const { exchangeRatesAPI, type, ...rest} = action;
+
+    next({type: type + REQUEST, ...rest });
+    
+    try {
+        const exRates = await fetch(exchangeRatesAPI)
         debugger;
-            const exRates = await fetch(exchangeRatesAPI).then(item => item.json());
+        const exRatesResponse = await exRates.json();
             console.log(exRates);
-            next({ ...rest, exRates});
-        // } catch {
-            // const error = response.then((error) => error.JSON());
-            
-        // }
+            next({ exRatesResponse, type: type + SUCCESS, ...rest });
+        } catch (error){
+            next({ error, type: type + FAILURE, ...rest });
+        }
 }

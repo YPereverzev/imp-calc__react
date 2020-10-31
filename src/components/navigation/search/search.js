@@ -16,13 +16,21 @@ const Search = ( { products, onImporterClick } ) => {
     });
     
     return (
-        <div>
-            <input 
-                className={styles.search} 
-                id="search" 
-                type="text"
-                placeholder="ПОИСК"
-            ></input>
+        <div className={styles.search}>
+            <div className={styles.search_container}>
+                <img className={styles.search_logo}
+                    alt="поиск"
+                    src="https://cdn.icon-icons.com/icons2/1660/PNG/512/3844467-magnifier-search-zoom_110341.png"
+                ></img>
+                
+                <input className={styles.search_field} 
+                    id="search" 
+                    // type="search"
+                    placeholder="найти поставщика"
+                >
+                </input>    
+
+            </div>
             <SearchedImporters 
                 products={filteredImporters} 
                 onImporterClick={onImporterClick}

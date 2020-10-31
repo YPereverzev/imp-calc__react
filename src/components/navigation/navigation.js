@@ -9,7 +9,10 @@ function Navigation(props) {
             <p>
                 Поставщики:
             </p>
-            <Search products={props.products} onImporterClick={props.onImporterClick}/>
+            <Search 
+                products={props.products} 
+                onImporterClick={props.onImporterClick}
+            />
             
         </div>
     );

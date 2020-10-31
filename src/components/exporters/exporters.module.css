@@ -1,4 +1,8 @@
 .exporters {
     display: inline-block;
     border: none;
+    background-color: #999;
+    padding: 20px 0px 15px 0px;
+    margin-right: 15px;
+    border-radius: 5px;
 }
