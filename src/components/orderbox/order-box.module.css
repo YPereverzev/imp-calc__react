@@ -1,0 +1,10 @@
+.orderBox {
+    display: inline-block;
+    vertical-align: top;
+    width: 550px;
+    background-color: #EEEEFF;
+}
+
+.summary {
+    padding-left: 10px;
+}

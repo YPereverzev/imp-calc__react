@@ -2,9 +2,10 @@ import React, {useState, useMemo} from 'react';
 import Navigation from '../navigation';
 import Exporter from '../exporter';
 import PropTypes from 'prop-types';
-import styles from './exporters.module.css';
 import { connect } from 'react-redux';
 import { importItemsServiceSelector , usersSelector } from '../../redux/reducer/selectors';
+
+import styles from './exporters.module.css';
 
 function Exporters (props) {
     const [activeExporterId, setActiveExporter] = useState(props.exporters[0].id);
@@ -33,8 +34,8 @@ Exporters.propTypes = {
         })).isRequired
     };
 
-const mapDispatchToProps = (state) =>({
+const mapStateToProps = (state) =>({
     exporters: importItemsServiceSelector(state),
     users: usersSelector(state)
 })
-export default connect(mapDispatchToProps)(Exporters);
+export default connect(mapStateToProps)(Exporters);

@@ -7,7 +7,7 @@ export default (experience = normalizedExperience, action) => {
 
     switch (type) {
         case ADD_FEEDBACK:
-            const { exporterId, name, review} = payload;
+            const { review} = payload;
             return [
                 ...experience, { 
                     id: feedbackId, managerId: userId, feedback:review 

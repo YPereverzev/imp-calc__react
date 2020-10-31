@@ -3,14 +3,15 @@ import Products from '../products';
 import Feedbacks from '../feedbacks'
 import PropTypes from "prop-types";
 import Choice from '../choice';
+import styles from './exporter.module.css';
+
 
 
 function Exporter(props) {
-     ;
     const [selectedСomponent, setSelectedСomponent] = useState('Products');
     if (selectedСomponent === 'Products') {
         return (
-            <div>
+            <div className={styles.exporter}>
                 <Choice setComponent={setSelectedСomponent}/>
                 <Products exporter={props.activeExporter} />
             </div>

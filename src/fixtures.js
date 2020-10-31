@@ -10,7 +10,6 @@ export const ImportItemsService = [
       "01",
       "02",
       "03",
-
     ],
     experience :[
       '5909796d-5030-4e36-adec-68b8f9ec2d196',
@@ -39,7 +38,13 @@ export const normalizedProducts = [
     "weightPerPc" : 0.5,
     "nameOfPc" : "турбины",
     "id" : "01",
-    "equipment": ["турбины", "инструкция"]
+    "equipment": ["турбины", "инструкция"],
+    "customs_code": {
+      code: "8409 91 00 00",
+      codeHref: "https://qdpro.com.ua/goodinfo/8409910000"
+    },
+    duty: 0,
+    vat: 20,
   }
     ,
   {
@@ -48,7 +53,13 @@ export const normalizedProducts = [
     "weightPerPc" : 2.5,
     "nameOfPc" : "патрубки",
     "id" : "02",
-    "equipment": ["патрубки", "инструкция"]
+    "equipment": ["патрубки", "инструкция"],
+    "customs_code": {
+      code: "8409 91 00 00",
+      codeHref: "https://qdpro.com.ua/goodinfo/8409910000"
+    },
+    duty: 0,
+    vat: 20,
   },
   {
     "volumePerPc" : 0.2,
@@ -56,7 +67,13 @@ export const normalizedProducts = [
     "weightPerPc" : 2.5,
     "nameOfPc" : "цилиндры",
     "id" : "03",
-    "equipment": ["цилиндры", "инструкция"]
+    "equipment": ["цилиндры", "инструкция"],
+    "customs_code": {
+      code: "8409 91 00 00",
+      codeHref: "https://qdpro.com.ua/goodinfo/8409910000"
+    },
+    duty: 0,
+    vat: 20,
   },
   {
     "id" : "21",
@@ -64,7 +81,13 @@ export const normalizedProducts = [
     "pricePerPc": 211,
     "weightPerPc" : 20.5,
     "nameOfPc" : "каркас",
-    "equipment": ["каркас", "доп.усиления", "инструкция"]
+    "equipment": ["каркас", "доп.усиления", "инструкция"],
+    "customs_code": {
+      code: "8409 91 00 00",
+      codeHref: "https://qdpro.com.ua/goodinfo/8409910000"
+    },
+    duty: 0,
+    vat: 20,
   }
     ,
   {
@@ -73,7 +96,13 @@ export const normalizedProducts = [
     "weightPerPc" : 22.5,
     "nameOfPc" : "глушитель титановый",
     "id" : "22",
-    "equipment": ["глушитель титановый", "крепления", "инструкция"]
+    "equipment": ["глушитель титановый", "крепления", "инструкция"],
+    "customs_code": {
+      code: "8409 91 00 00",
+      codeHref: "https://qdpro.com.ua/goodinfo/8409910000"
+    },
+    duty: 0,
+    vat: 20,
   },
 ]
 

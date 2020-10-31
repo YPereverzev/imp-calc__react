@@ -1,23 +1,16 @@
 import React from 'react';
 import PropTypes from "prop-types";
+import styles from './navigation.module.css';
+import Search from './search';
 
 function Navigation(props) {
     return (
-        <div>
-             {
-                 props.products.map((item) => {
-                 ;
-                 console.log(item);
-                    return (
-                        <div key={item.id}>
-                            <button className="Exporters__exporter-select-button"
-                                onClick={() => props.onImporterClick(item.id)}
-                            > 
-                                exporterName : {item.exporterName}
-                            </button>
-                        </div>)
-                })} 
-
+        <div className={styles.navigation}>
+            <p>
+                Поставщики:
+            </p>
+            <Search products={props.products} onImporterClick={props.onImporterClick}/>
+            
         </div>
     );
 }

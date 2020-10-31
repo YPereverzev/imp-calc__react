@@ -6,28 +6,39 @@ import styles from './order-box.module.css';
 import { orderBoxSelector } from '../../redux/reducer/selectors';
 
 function OrderBox(props) {
-    console.log('render OrderBox');
+    
+    if (Object.keys(props.order).length === 0)  {
+        return (<div className={styles.orderBox}>
+            <h2>ЗАКАЗ пуст</h2>
+        </div>) 
+    }
 
     return (
         <div className={styles.orderBox}>
-            <h2>ORDER</h2>
-            {props.orderedItemsForNow.map((item) => {
-                const qty = props.order[item.id]
+            <div>
+                <h2>ЗАКАЗ</h2>
+                {props.orderedItemsForNow.map((item) => {
+                    const qty = props.order[item.id]
 
-                return <OrderedItems 
-                    key = {item.id}
-                    id = {item.id}
-                    name = {item.nameOfPc}
-                    price = {item.pricePerPc}
-                    qty = {qty}
-                />
-            })
-        }
-            <h3>Итого к оплате: {props.orderedItemsForNow.reduce((sum = 0, item = 0) => 
-                    sum + item.pricePerPc * props.order[item.id], 0
-                )} 
-                долл
-            </h3>
+                    return <OrderedItems 
+                        key = {item.id}
+                        id = {item.id}
+                        name = {item.nameOfPc}
+                        price = {item.pricePerPc}
+                        qty = {qty}
+                    />
+                    })
+                }
+                <div className={styles.summary}>
+                    <h3>Итого к оплате: {props.orderedItemsForNow.reduce((sum = 0, item = 0) => 
+                            sum + item.pricePerPc * props.order[item.id], 0
+                        )} {` `}
+                        долл
+                    </h3>
+
+                </div>
+
+            </div>
 
         </div>
     )};
