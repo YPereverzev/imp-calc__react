@@ -16,14 +16,8 @@
 }
 
 
-.exchangeRates button {
-    border: none;
-    border-radius: 2px;
-    line-height: 1.2em;
-}
-
 .exchangeRates p {
-    line-height: 0.8em;
+    line-height: 0.7em;
     font-size: 0.9em;
 }
 

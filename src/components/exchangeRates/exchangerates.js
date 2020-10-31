@@ -7,12 +7,12 @@ import { loadExchangeRates } from '../../redux/actions';
 
 const ExchangeRates = ({ loadExchangeRates, exchangeRates } ) => {
     console.log('exchangeRates', exchangeRates);
-    // debugger;
+    
     useEffect(() => {
         loadExchangeRates();
     }, []);//eslint-disable-line
     
-    if (!exchangeRates['0']) 
+    if (!exchangeRates[0]) 
     return (<div className={styles.exchangeRates}>
         <p className={styles.usd} id='usd_value'>
             loading...
@@ -21,11 +21,10 @@ const ExchangeRates = ({ loadExchangeRates, exchangeRates } ) => {
             loading...
         </p>
     </div>)
-    debugger;
+    // debugger;
     return (
         <div className={styles.exchangeRates}>
             
-            {/* <button onClick={ratesQuery}>обновить курс</button> */}
             <p className={styles.usd} id='usd_value'>
                 {Number(exchangeRates[0].sale).toFixed(3) + ` USD`}
             </p>
@@ -38,7 +37,7 @@ const ExchangeRates = ({ loadExchangeRates, exchangeRates } ) => {
 };
 
 const mapStateToProps = (state) => {
-    // debugger;
+    debugger;
     return {
         exchangeRates: exchangeRatesSelector(state)
     };
