@@ -1,4 +1,20 @@
-.AddFeedback {
+.exporter {
     background-color: #AAA;
-    color: blue;
+    margin-top: 20px;
+}
+
+.exporter_name {
+    margin-top: 20px;
+    background-color: #fff;
+    /* color: teal; */
+    border-radius: 5px;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.exporter_name h2{
+    /* color: red; */
+    text-align: center;
+    line-height: 2em;
 }

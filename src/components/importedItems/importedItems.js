@@ -4,17 +4,21 @@ import PropTypes from "prop-types";
 import { connect } from 'react-redux';
 import { decrement, increment } from '../../redux/actions';
 import styles from './Importeditems.module.css';
+import Ordereditems from '../ordereditems';
 
 function ImportedItems (props) {
     const amount = props.order;
-    debugger;
+    
     return (
         <div className={styles.importedItems}
         data-test-id="ImportedItems">
-            <p>{props.item.nameOfPc}</p>
-            <p>{props.item.pricePerPc} $</p>
-            <button onClick={() => props.increment(props.item.id)}>+</button> 
-            <button onClick={() => props.decrement(props.item.id)}>-</button>
+            <Ordereditems 
+            id = {props.item.id}
+            name = {props.item.nameOfPc}
+            price = {props.item.pricePerPc}
+            qty = {amount}
+            />
+
             <div className={styles.volume_weight_container}>
 
             <div className={styles.volume}>
@@ -29,7 +33,11 @@ function ImportedItems (props) {
             </div>
             <div className={styles.state_regulation}>
                 Тарифное и нетарифное регуллирование: <br/>
-                код: <a href={props.item.customs_code.codeHref} target="_blank"> {props.item.customs_code.code} </a>
+                <p> КОД УКТВЭД: 
+                    <a href={props.item.customs_code.codeHref} target="_blank"> 
+                        {props.item.customs_code.code} 
+                    </a>
+                </p>
                 <p>Пошлина: {props.item.duty.toString()} %</p>
                 <p>НДС: {props.item.vat.toString()} %</p>
             </div>

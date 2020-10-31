@@ -1,12 +1,9 @@
-import { ImportItemsService}  from '../../fixtures'
+import { importItemsService}  from '../../fixtures'
 import { ADD_FEEDBACK } from '../constants';
-import experience from './experience';
 
-
-export default (importItems = ImportItemsService, action) => {
+export default (importItems = importItemsService, action) => {
     
     const { type, payload, feedbackId, userId } = action;
-    
 
     switch (type) {
         case ADD_FEEDBACK:

@@ -6,7 +6,7 @@ export const ADD_FEEDBACK = 'ADD_FEEDBACK';
 
 export const LOAD_EXCHANGE_RATES = 'LOAD_EXCHANGE_RATES';
 
-export const REQUEST = 'REQUEST';
-export const FAILURE = 'FAILURE';
-export const SUCCESS = 'SUCCESS';
+export const REQUEST = '_REQUEST';
+export const FAILURE = '_FAILURE';
+export const SUCCESS = '_SUCCESS';
 

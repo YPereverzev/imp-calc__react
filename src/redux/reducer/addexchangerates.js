@@ -6,40 +6,46 @@ import {
     FAILURE,
 } from '../constants';
 
-export default (state = {}, action) => {
-    const { type, exRates } = action;
-    const initialState  = {
-        loading: {},
-        error: null,
-        loaded: {},
-        entities: {},
-    }
-    switch (type) {
-        case LOAD_EXCHANGE_RATES:
-            debugger;
-            return { 
-                ...exRates
-            }
+const initialState  = {
+    loading: {},
+    error: null,
+    loaded: {},
+    entities: {},
+}
 
+export default (state = initialState, action) => {
+    const { type, exRatesResponse, error } = action;
+    debugger;
+
+    switch (type) {
         case LOAD_EXCHANGE_RATES + REQUEST:
-            initialState.loading = true;
-            initialState.loaded = false;
-            initialState.error = null;
-            return //{...state, exchangeRates: { ...initialState.entities } } 
+                debugger;
+            
+            return {
+                ...state,
+                loading: true,
+                loaded: false,
+                error: null
+            }; 
 
         case LOAD_EXCHANGE_RATES + FAILURE:
-            initialState.loading = false;
-            initialState.loaded = false;
-            initialState.error = 'error';
-            return; 
+            debugger;
+            return {
+                ...state,
+                loading: false,
+                loaded: false,
+                error: error
+            };
         
         case LOAD_EXCHANGE_RATES + SUCCESS:
-            initialState.loading = false;
-            initialState.loaded = true;
-            initialState.error = null;
             debugger;
-            return {...state, exchangeRates: { ...exRates } } 
-
+            return {
+                ...state,
+                loading: false,
+                loaded: true,
+                error: null,
+                entities: { ...exRatesResponse } 
+            };
 
         default:
             return state;

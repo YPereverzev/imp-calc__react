@@ -6,23 +6,31 @@ const SearchedImporters = (props) => {
     return (
         <div>
             <div  className={styles.searchedImporters} >
-                <form  method="post">
-                    <p>
-                        <select size="3" multiple name="serchedImporters">
+                <form  className={styles.searchedImporters_form}
+                    method="post"
+                >
+                        <select 
+                        size="4" 
+                        multiple 
+                        name="serchedImporters"
+                        // autocomplete="off"
+                        >
                         {props.products.map((item) => {
                             console.log(item);
                                 return (
-                                <option 
-                                    className={styles.nav_button}
-                                    key={item.id} onClick={() => props.onImporterClick(item.id)}>
+                                    <option 
+                                        className={styles.nav_button}
+                                        key={item.id} 
+                                        onClick={() => props.onImporterClick(item.id)}>
                                         {item.exporterName}
                                     </option>
                                 )
                         })} 
 
                         </select>
+                    <p>
+                        {/* <input type="submit" value="Отправить"></input> */}
                     </p>
-                <p><input type="submit" value="Отправить"></input></p>
                 </form>
                 <p></p>
                 </div>      
