@@ -6,6 +6,18 @@ import { decrement, increment } from '../../redux/actions';
 import styles from './Importeditems.module.css';
 import Ordereditems from '../ordereditems';
 
+
+// loadExchangeRates, 
+//     exchangeRates, 
+//     loaded, 
+//     loading,
+//     loadingError,
+//     increment,
+//     decrement,
+//     id,
+//     item,
+//     order,
+
 function ImportedItems (props) {
     const amount = props.order;
     
@@ -66,8 +78,9 @@ const mapDispatchToProps = (dispatch) => {
 
 //я получил id продукта вместо продукта
 const mapStateToProps = (state, ownProps) => {
+    // debugger;
     return{
-        item : state.products[ownProps.id],
+        item : state.products.entities[ownProps.id],
         order: state.order[ownProps.id] || 0,
     };
 

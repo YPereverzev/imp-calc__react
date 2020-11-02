@@ -1,13 +1,13 @@
 import React from 'react';
 
 import ImportedItems from './importedItems';
-import { importItemsService } from '../../fixtures';
+import {  allExporters } from '../../fixtures';
 
-const item = importItemsService[0].products[0];
+const item =  allExporters[0].products[0];
 
 
-describe('importItemsService', () => {
-    it('importItemsService should render', () => {
+describe(' allExporters', () => {
+    it(' allExporters should render', () => {
         
         const component = mount(<ImportedItems item={item} />);
         expect(component.find(`[data-test-id="ImportedItems"]`).length).toBe(1);

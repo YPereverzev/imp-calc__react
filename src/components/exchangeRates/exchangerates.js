@@ -1,18 +1,28 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import styles from './exchangerates.module.css';
-import { exchangeRatesSelector } from '../../redux/reducer/selectors';
+import { 
+    exchangeRatesSelector, 
+    exchangeRatesLoaded, 
+    exchangeRatesLoading, 
+    exchangeLoadingRatesError } from '../../redux/reducer/selectors';
 
 import { loadExchangeRates } from '../../redux/actions';
 
-const ExchangeRates = ({ loadExchangeRates, exchangeRates } ) => {
+const ExchangeRates = ({ 
+    loadExchangeRates, 
+    exchangeRates, 
+    loaded, 
+    loading,
+    loadingError
+} ) => {
     console.log('exchangeRates', exchangeRates);
     
     useEffect(() => {
-        loadExchangeRates();
+        if (!loaded) loadExchangeRates();
     }, []);//eslint-disable-line
-    
-    if (!exchangeRates[0]) 
+     ;
+    if (loading || !loaded) 
     return (<div className={styles.exchangeRates}>
         <p className={styles.usd} id='usd_value'>
             loading...
@@ -21,7 +31,8 @@ const ExchangeRates = ({ loadExchangeRates, exchangeRates } ) => {
             loading...
         </p>
     </div>)
-    // debugger;
+    //  ;
+
     return (
         <div className={styles.exchangeRates}>
             
@@ -37,9 +48,12 @@ const ExchangeRates = ({ loadExchangeRates, exchangeRates } ) => {
 };
 
 const mapStateToProps = (state) => {
-    debugger;
+     ;
     return {
-        exchangeRates: exchangeRatesSelector(state)
+        exchangeRates: exchangeRatesSelector(state),
+        loaded: exchangeRatesLoaded(state),
+        loading: exchangeRatesLoading(state),
+        loadingError: exchangeLoadingRatesError(state),
     };
 
 }

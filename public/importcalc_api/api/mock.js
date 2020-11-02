@@ -1,4 +1,4 @@
-const importItemsService = [
+const  allExporters = [
     {
       id :'12341234-2341234',
       erName: "ImpExp LTD", 
@@ -160,7 +160,7 @@ const normalizedUsers = [
   
   
   module.exports = {
-    importItemsService: importItemsService,
+     allExporters:  allExporters,
     normalizedProducts: normalizedProducts,
     normalizedExperience: normalizedExperience,
     users: normalizedUsers,

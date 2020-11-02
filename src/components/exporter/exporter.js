@@ -4,11 +4,18 @@ import Feedbacks from '../feedbacks'
 import PropTypes from "prop-types";
 import Choice from '../choice';
 import styles from './exporter.module.css';
+import { activeExporterSelector } from '../../redux/reducer/selectors';
+import { connect } from 'react-redux';
 
 
 
 function Exporter(props) {
+    // debugger;
     const [selectedСomponent, setSelectedСomponent] = useState('Products');
+
+    // if (!)
+
+
     if (selectedСomponent === 'Products') {
         return (
             <div className={styles.exporter}>
@@ -39,4 +46,10 @@ Exporter.propTypes = {
     activeExporter: PropTypes.object.isRequired
 }
 
-export default Exporter;
+const mapStateToProps = (state, ownProps) => {
+    return {
+        activeExporter: activeExporterSelector(state, ownProps.activeExporterId)
+    }
+}
+
+export default connect(mapStateToProps)(Exporter);

@@ -1,16 +1,23 @@
-import { importItemsService}  from '../../fixtures'
+// import {  allExporters }  from '../../fixtures'
 import { ADD_FEEDBACK } from '../constants';
 
-export default (importItems = importItemsService, action) => {
+const initialState = {
+    entities: {},
+    loading: false,
+    loaded: false,
+    error: null
+}
+
+export default (state = initialState, action) => {
     
     const { type, payload, feedbackId, userId } = action;
 
     switch (type) {
         case ADD_FEEDBACK:
             const { exporterId, name, review} = payload;
-            let changedExporter = importItems.find(item => item.id === exporterId.id);
-            const changedExporterIndex = importItems.indexOf(changedExporter);
-            const newImportItems = [...importItems];
+            let changedExporter = state.find(item => item.id === exporterId.id);
+            const changedExporterIndex = state.indexOf(changedExporter);
+            const newImportItems = [...state];
             
             changedExporter = {
                 ...changedExporter,
@@ -21,7 +28,7 @@ export default (importItems = importItemsService, action) => {
             
             return result;
         default: 
-        return importItems;
+        return state;
     }
 
 }

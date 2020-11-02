@@ -5,6 +5,9 @@ import {
     ADD_NEW_USER, 
     ADD_FEEDBACK,
     LOAD_EXCHANGE_RATES,
+    LOAD_PRODUCTS,
+    LOAD_EXPERIENCE,
+    LOAD_EXPORTERS
  } from "./constants";
 
 export const increment = (id) => ({ type : INCREMENT, payload: { id }});
@@ -29,9 +32,38 @@ export const addFeedback = ({ feedbackInfo }) => {
 };
 
 export const loadExchangeRates = () => {
-    // debugger;
     return {
         type: LOAD_EXCHANGE_RATES,
         exchangeRatesAPI: 'https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5'
+    }
+}
+
+// const thunk allExportersLoad = () => {
+// 
+// }
+
+export const loadProducts = () => {
+    return {
+        type: LOAD_PRODUCTS,
+        productsAPI: 'http://localhost:3001/api/normalizedProducts'
+    }
+}
+
+export const loadExperience = () => {
+    // debugger;
+    return {
+        type: LOAD_EXPERIENCE,
+        experienceAPI: 'http://localhost:3001/api/normalizedExperience'
+    }
+}
+
+
+
+
+export const loadExporters = () => {
+    // debugger;
+    return {
+        type: LOAD_EXPORTERS,
+        exporterAPI: 'http://localhost:3001/api/allExporters'
     }
 }

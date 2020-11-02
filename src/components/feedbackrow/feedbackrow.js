@@ -1,9 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { experienceIdSelector, usersSelector } from '../../redux/reducer/selectors';
+import { 
+    experienceLoadingError,
+    experienceLoaded,
+    experienceLoading,
+    experienceIdSelector,
+    usersSelector
+ } from '../../redux/reducer/selectors';
+import Loader from  '../loader';
+import {loadExperience} from  '../../redux/actions';
+
+
 import style from './feedbackrow.module.css';
 
 const FeedbackRow = ( props ) => {
+
+    useEffect(() => {
+        if (!props.loaded) props.loadExperience();
+        //rewrite: one request per id by experience
+    }, []) //eslint-disable-line
+    // debugger;
+    if (props.loading || !props.loaded) return <Loader />;
+
 
     return (
         <div className={style.feedbackrow} key={props.experience}>
@@ -21,14 +39,22 @@ const FeedbackRow = ( props ) => {
 };
 
 const mapStateToProps = (state, ownProps) => {
-     ;
+    // debugger;
     return {
         experience: experienceIdSelector(state, ownProps),
-        // .find((item) => item.id === ownProps.experienceId),
-        // experience: experienceIdSelector(state, ownProps),
-        users: usersSelector(state)
+        users: usersSelector(state),
+        loading: experienceLoading(state),
+        loaded: experienceLoaded(state),
+        error: experienceLoadingError(state)
     }
 }
 
+const mapDispatchToProps = (dispatch) => {
+    // debugger
+    return {
+        loadExperience: () => dispatch(loadExperience())
+    }
 
-export default connect(mapStateToProps)(FeedbackRow);// FeedbackRow;
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FeedbackRow);// FeedbackRow;

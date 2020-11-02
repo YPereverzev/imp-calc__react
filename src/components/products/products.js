@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ImportedItems from '../importedItems';
+// import { exporterSelector } from '../../redux/actions';
 
 export default function Products (props){
-     ;
+    debugger;
+    // if (props.loading || !props.loaded) return <Loader />
+
     return (
             <div>
                 {props.exporter.products.map(id => {
@@ -18,6 +21,14 @@ export default function Products (props){
         );
     
 }
+
+// const mapStateToProps = (state, ownProps) => {
+//     return {
+//         exporter: exporterSelector()
+//     }
+// }
+
+// connect(mapStateToProps)(Products);
 
 Products.propTypes = {
     exporter: PropTypes.shape({

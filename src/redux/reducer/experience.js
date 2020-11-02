@@ -1,20 +1,54 @@
-import { normalizedExperience } from '../../fixtures';
-import { ADD_FEEDBACK } from '../constants';
+// import { normalizedExperience } from '../../fixtures';
 
-export default (experience = normalizedExperience, action) => {
-    const { type, payload, feedbackId, userId } = action;
+import {
+    REQUEST,
+    SUCCESS,
+    FAILURE,
+    LOAD_EXPERIENCE
+} from '../constants';
 
-
-    switch (type) {
-        case ADD_FEEDBACK:
-            const { review} = payload;
-            return [
-                ...experience, { 
-                    id: feedbackId, managerId: userId, feedback:review 
-                },
-
-            ]
-        default:
-            return experience;
-    }
+const initialState = {
+    entities: {},
+    loading: false,
+    loaded: false,
+    error: null
 }
+
+// normalizedExperience
+
+export default (state = initialState, action) => {
+     
+    const { type, experienceResponse, error } = action;
+    switch (type) {
+        case LOAD_EXPERIENCE + REQUEST: 
+            return {
+                ...state,
+                entities: {},
+                loading: true,
+                loaded: false,
+                error: null
+            }
+
+        case LOAD_EXPERIENCE + SUCCESS: 
+            return {
+                ...state,
+                entities: [...experienceResponse],
+                loading: false,
+                loaded: true,
+                error: null
+            }
+            
+        case LOAD_EXPERIENCE + FAILURE: 
+            return {
+                ...state,
+                entities: {},
+                loading: true,
+                loaded: false,
+                error: error
+            }
+        default:
+            return state;
+    }
+
+}
+

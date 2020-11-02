@@ -6,6 +6,7 @@ import products from './products';
 import users from './users';
 import addFeedback from './addfeedback';
 import addExchangeRates from './addexchangerates';
+import loadExporters from './loadExporters';
 
 export default combineReducers({
    order: orderReducer,
@@ -15,4 +16,5 @@ export default combineReducers({
    users: users,
    addFeedback: addFeedback,
    addExchangeRates: addExchangeRates,
+   allExporters: loadExporters,
 }) 

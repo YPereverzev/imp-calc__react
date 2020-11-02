@@ -2,7 +2,7 @@ import { FAILURE, REQUEST, SUCCESS } from "../constants";
 
 
 export default state => next => async action => {
-    if (!action.exchangeRatesAPI) next(action);
+    if (!action.exchangeRatesAPI) return next(action);
     
     const { exchangeRatesAPI, type, ...rest} = action;
 
@@ -10,7 +10,7 @@ export default state => next => async action => {
     
     try {
         const exRates = await fetch(exchangeRatesAPI)
-        debugger;
+         ;
         const exRatesResponse = await exRates.json();
             console.log(exRates);
             next({ exRatesResponse, type: type + SUCCESS, ...rest });

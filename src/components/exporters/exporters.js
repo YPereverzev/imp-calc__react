@@ -1,31 +1,75 @@
-import React, {useState, useMemo} from 'react';
+import React, {useState, useMemo, useEffect} from 'react';
 import Navigation from '../navigation';
 import Exporter from '../exporter';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { importItemsServiceSelector , usersSelector } from '../../redux/reducer/selectors';
+import Loader from  '../loader';
+import { 
+     allExportersSelector, 
+    usersSelector,
+    exportersAlreadyLoadedSelector,
+    exportersLoadingSelector,
+    exportersLoadedSelector,
+    exportersLoadingErrorSelector
+
+} from '../../redux/reducer/selectors';
 
 import styles from './exporters.module.css';
+import { loadProducts } from '../../redux/actions';
 
 function Exporters (props) {
-    const [activeExporterId, setActiveExporter] = useState(props.exporters[0].id);
-    const activeExporter = useMemo (
-        () =>
-            props.exporters.find(
-                (exporter) => activeExporterId === exporter.id
-        ),
-        [activeExporterId, props.exporters])
+    useEffect(() => {
+        // if (!props.loaded) props.loadProducts();
+        if (!props.loaded) props.loadExporters();
 
+    }, []) //eslint-disable-line
+
+
+
+    // СОЗДАТЬ ПОДКОМПОНЕНТУ, КОТОРАЯ У СЕБЯ ВНУТРИ БУДЕТ ХРАНИТЬ СОСТОЯНИЕ 
+    // ЧЕРЕЗ USESTATE
+
+
+    
+    debugger;
+    const [activeExporterId, setActiveExporter] = useState(props.exporters[0].id);
+    
+    // const activeExporter = useMemo (
+    //     () =>props.exporters.find(
+    //         (exporter) => activeExporterId === exporter.id
+    //     ),
+    // [activeExporterId, props.exporters])
+    
+
+    if (props.loading || !props.loaded) return <Loader />
+
+    
     return (
-    <div className={styles.exporters}>
-        <Navigation 
-            products={props.exporters}
-            onImporterClick={setActiveExporter}
-        />
-        <Exporter activeExporter={activeExporter}/>
-        
-    </div>
-    );
+        <div className={styles.exporters}>
+            <Navigation 
+                products={props.exporters}
+                onImporterClick={setActiveExporter}
+            />
+            <Exporter 
+                // activeExporter={activeExporter}
+                activeExporterId={activeExporterId}
+            />
+            
+        </div>
+        );
+
+        // return (
+        //     <div className={styles.exporters}>
+        //         <Navigation 
+        //             products={props.exporters}
+        //             onImporterClick={setActiveExporter}
+        //         />
+        //         <Exporter activeExporter={activeExporter}/>
+                
+        //     </div>
+        // );
+
+
 };
 
 Exporters.propTypes = {
@@ -35,7 +79,25 @@ Exporters.propTypes = {
     };
 
 const mapStateToProps = (state) =>({
-    exporters: importItemsServiceSelector(state),
-    users: usersSelector(state)
+    // exporters:  allExportersSelector(state),
+    // users: usersSelector(state),
+    // products: productsAlreadyLoadedSelector(state),
+    // loading: producstLoading(state),
+    // loaded: producstLoaded(state),
+    // error: pruductsLoadingError(state),
+
+    exporters:  exportersAlreadyLoadedSelector(state),
+    users: usersSelector(state),
+    loading: exportersLoadingSelector(state),
+    loaded: exportersLoadedSelector(state),
+    error: exportersLoadingErrorSelector(state),
+
 })
-export default connect(mapStateToProps)(Exporters);
+
+const mapDispatchToProps = (dispatch) => {
+    // debugger;
+ return {
+    loadProducts: () => dispatch(loadProducts())
+ }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Exporters);

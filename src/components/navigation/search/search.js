@@ -8,9 +8,7 @@ const Search = ( { products, onImporterClick } ) => {
     
     useEffect(() => {
         const search = document.getElementById('search');
-        console.log(search);
         search.addEventListener('change', (event) => {
-            console.log(event.target.value);
             searchHandler(event, setFilteredImporters, products);
         });
     });

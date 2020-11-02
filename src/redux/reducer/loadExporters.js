@@ -1,6 +1,5 @@
-// import produce from 'immer';
 import { 
-    LOAD_EXCHANGE_RATES,
+    LOAD_EXPORTERS,
     SUCCESS,
     REQUEST,
     FAILURE,
@@ -14,13 +13,12 @@ const initialState  = {
 }
 
 export default (state = initialState, action) => {
-    const { type, exRatesResponse, error } = action;
+
+    const { type, eportersResponse, error } = action;
      ;
 
     switch (type) {
-        case LOAD_EXCHANGE_RATES + REQUEST:
-                 ;
-            
+        case LOAD_EXPORTERS + REQUEST:
             return {
                 ...state,
                 loading: true,
@@ -28,8 +26,7 @@ export default (state = initialState, action) => {
                 error: null
             }; 
 
-        case LOAD_EXCHANGE_RATES + FAILURE:
-             ;
+        case LOAD_EXPORTERS + FAILURE:
             return {
                 ...state,
                 loading: false,
@@ -37,17 +34,17 @@ export default (state = initialState, action) => {
                 error: error
             };
         
-        case LOAD_EXCHANGE_RATES + SUCCESS:
-             ;
+        case LOAD_EXPORTERS + SUCCESS:
             return {
                 ...state,
                 loading: false,
                 loaded: true,
                 error: null,
-                entities: [...exRatesResponse ] 
+                entities: { ...eportersResponse } 
             };
 
         default:
             return state;
     }
+
 }

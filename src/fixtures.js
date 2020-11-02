@@ -1,6 +1,6 @@
 // информация о грузах
 
-export const importItemsService = [
+export const  allExporters = [
   {
     id :'12341234-2341234',
     exporterName: "ImpExp LTD", 
