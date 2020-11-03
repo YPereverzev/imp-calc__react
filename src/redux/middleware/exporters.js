@@ -5,7 +5,7 @@ import {
 } from '../constants';
 
 export const loadExporters = (state) => (next) => async (action) => {
-    if (!action.exporterAPI) return next(action);
+    if (!action.exportersAPI) return next(action);
 
     const { type, exportersAPI, ...rest} = action;
     

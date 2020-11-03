@@ -3,9 +3,9 @@ import { mount } from 'enzyme';
 
 import Product from './product';
 
-import {  allExporters } from '../../fixtures';
+import { allExporters } from '../../fixtures';
 
-const product =  allExporters[0].menu[0];
+const product = allExporters[0].menu[0];
 
 describe('Product', () => {
   let component;

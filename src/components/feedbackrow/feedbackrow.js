@@ -7,7 +7,7 @@ import {
     experienceIdSelector,
     usersSelector
  } from '../../redux/reducer/selectors';
-import Loader from  '../loader';
+import Loader  from  '../loader';
 import {loadExperience} from  '../../redux/actions';
 
 

@@ -14,11 +14,11 @@ const initialState  = {
 
 export default (state = initialState, action) => {
 
-    const { type, eportersResponse, error } = action;
-     ;
+    const { type, exportersResponse, error } = action;
 
     switch (type) {
         case LOAD_EXPORTERS + REQUEST:
+            // debugger;
             return {
                 ...state,
                 loading: true,
@@ -40,7 +40,7 @@ export default (state = initialState, action) => {
                 loading: false,
                 loaded: true,
                 error: null,
-                entities: { ...eportersResponse } 
+                entities: [ ...exportersResponse ] 
             };
 
         default:

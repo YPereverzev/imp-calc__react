@@ -10,7 +10,7 @@ function Navigation(props) {
                 Поставщики:
             </p>
             <Search 
-                products={props.products} 
+                exporters={props.exporters} 
                 onImporterClick={props.onImporterClick}
             />
             

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Loader from  '../loader';
 import { 
-     allExportersSelector, 
+    allExportersSelector, 
     usersSelector,
     exportersAlreadyLoadedSelector,
     exportersLoadingSelector,
@@ -14,40 +14,31 @@ import {
 
 } from '../../redux/reducer/selectors';
 
-import styles from './exporters.module.css';
 import { loadProducts } from '../../redux/actions';
+import styles from './exporters.module.css';
 
 function Exporters (props) {
+    
     useEffect(() => {
-        // if (!props.loaded) props.loadProducts();
-        if (!props.loaded) props.loadExporters();
-
+        // debugger;
+        if (!props.loaded) props.loadProducts();
     }, []) //eslint-disable-line
 
-
-
-    // СОЗДАТЬ ПОДКОМПОНЕНТУ, КОТОРАЯ У СЕБЯ ВНУТРИ БУДЕТ ХРАНИТЬ СОСТОЯНИЕ 
-    // ЧЕРЕЗ USESTATE
-
-
-    
-    debugger;
     const [activeExporterId, setActiveExporter] = useState(props.exporters[0].id);
+    // debugger;
     
     // const activeExporter = useMemo (
-    //     () =>props.exporters.find(
-    //         (exporter) => activeExporterId === exporter.id
-    //     ),
+    //    
     // [activeExporterId, props.exporters])
     
 
-    if (props.loading || !props.loaded) return <Loader />
+    // if (props.loading || !props.loaded) return <Loader />
 
     
     return (
         <div className={styles.exporters}>
             <Navigation 
-                products={props.exporters}
+                exporters={props.exporters}
                 onImporterClick={setActiveExporter}
             />
             <Exporter 
@@ -79,18 +70,14 @@ Exporters.propTypes = {
     };
 
 const mapStateToProps = (state) =>({
-    // exporters:  allExportersSelector(state),
-    // users: usersSelector(state),
-    // products: productsAlreadyLoadedSelector(state),
-    // loading: producstLoading(state),
-    // loaded: producstLoaded(state),
-    // error: pruductsLoadingError(state),
+    exporters: allExportersSelector(state),
+    
 
-    exporters:  exportersAlreadyLoadedSelector(state),
-    users: usersSelector(state),
-    loading: exportersLoadingSelector(state),
-    loaded: exportersLoadedSelector(state),
-    error: exportersLoadingErrorSelector(state),
+    // exporters:  exportersAlreadyLoadedSelector(state),
+    // users: usersSelector(state),
+    // loading: exportersLoadingSelector(state),
+    // loaded: exportersLoadedSelector(state),
+    // error: exportersLoadingErrorSelector(state),
 
 })
 

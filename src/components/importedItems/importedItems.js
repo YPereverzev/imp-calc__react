@@ -20,7 +20,7 @@ import Ordereditems from '../ordereditems';
 
 function ImportedItems (props) {
     const amount = props.order;
-    
+    // debugger;
     return (
         <div className={styles.importedItems}
         data-test-id="ImportedItems">

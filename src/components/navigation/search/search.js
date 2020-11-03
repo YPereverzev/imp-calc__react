@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import styles from './search.module.css'
 import SearchedImporters from '../searchedimporters'
 
-const Search = ( { products, onImporterClick } ) => {
+const Search = ( { exporters, onImporterClick } ) => {
 
-    const [filteredImporters, setFilteredImporters] = useState(products);
+    const [filteredImporters, setFilteredImporters] = useState(exporters);
     
     useEffect(() => {
         const search = document.getElementById('search');
         search.addEventListener('change', (event) => {
-            searchHandler(event, setFilteredImporters, products);
+            searchHandler(event, setFilteredImporters, exporters);
         });
     });
     
@@ -30,21 +30,21 @@ const Search = ( { products, onImporterClick } ) => {
 
             </div>
             <SearchedImporters 
-                products={filteredImporters} 
+                exporters={filteredImporters} 
                 onImporterClick={onImporterClick}
                 />
         </div>
     );
 };
 
-const searchHandler = (event, setFilteredImporters, products) => {
+const searchHandler = (event, setFilteredImporters, exporters) => {
     console.log('ищу');
-    if (!event) return products;
+    if (!event) return exporters;
 
-    const filteredProducts = products.filter((item) => {
+    const filteredExporters = exporters.filter((item) => {
         return item.exporterName.includes(event.target.value);
     })
-    return setFilteredImporters((state) => filteredProducts);
+    return setFilteredImporters((state) => filteredExporters);
 }
 
 export default Search;

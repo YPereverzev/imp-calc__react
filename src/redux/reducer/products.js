@@ -22,7 +22,6 @@ const toObjProducts = (normalizedProducts) => normalizedProducts.reduce(
 export default (state = initialState, action) => {
 
     const { type, productsResponse, error } = action;
-     ;
 
     switch (type) {
         case LOAD_PRODUCTS + REQUEST:
@@ -42,6 +41,7 @@ export default (state = initialState, action) => {
             };
         
         case LOAD_PRODUCTS + SUCCESS:
+            // debugger;
             return {
                 ...state,
                 loading: false,

@@ -1,11 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ImportedItems from '../importedItems';
-// import { exporterSelector } from '../../redux/actions';
+import Loader from '../loader';
+import {
+    producstLoading,
+    producstLoaded,
+    pruductsLoadingError,
+    productsAlreadyLoadedSelector,
 
-export default function Products (props){
-    debugger;
-    // if (props.loading || !props.loaded) return <Loader />
+} from '../../redux/reducer/selectors';
+
+// import { exporterSelector } from '../../redux/actions';
+import { loadProducts } from '../../redux/actions';
+import { connect } from 'react-redux';
+
+function Products (props){
+
+    useEffect(() => {
+        if (!props.loaded) loadProducts()
+    }, []) //eslint-disable-line
+    // debugger;
+    if (props.loading || !props.loaded) return <Loader />
 
     return (
             <div>
@@ -22,13 +37,16 @@ export default function Products (props){
     
 }
 
-// const mapStateToProps = (state, ownProps) => {
-//     return {
-//         exporter: exporterSelector()
-//     }
-// }
+const mapStateToProps = (state) => {
+    return {
+        products: productsAlreadyLoadedSelector(state),
+        loading: producstLoading(state),
+        loaded: producstLoaded(state),
+        error: pruductsLoadingError(state),
+    }
+}
 
-// connect(mapStateToProps)(Products);
+export default connect(mapStateToProps, {loadProducts})(Products);
 
 Products.propTypes = {
     exporter: PropTypes.shape({

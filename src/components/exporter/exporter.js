@@ -47,6 +47,7 @@ Exporter.propTypes = {
 }
 
 const mapStateToProps = (state, ownProps) => {
+    // debugger;
     return {
         activeExporter: activeExporterSelector(state, ownProps.activeExporterId)
     }

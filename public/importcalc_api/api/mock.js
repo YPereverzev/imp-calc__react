@@ -1,7 +1,7 @@
-const  allExporters = [
+const allExporters = [
     {
       id :'12341234-2341234',
-      erName: "ImpExp LTD", 
+      exporterName: "ImpExp LTD", 
       location : 'EU, Germany',
       image : 'https://.....',
       products : [
@@ -17,7 +17,7 @@ const  allExporters = [
     }, 
     {
       id : '212341234-2341234',
-      erName: "Machine LTD", 
+      exporterName: "Machine LTD", 
       location : '2EU, Germany',
       image : '2https://.....',
       products : [
@@ -160,7 +160,7 @@ const normalizedUsers = [
   
   
   module.exports = {
-     allExporters:  allExporters,
+    allExporters: allExporters,
     normalizedProducts: normalizedProducts,
     normalizedExperience: normalizedExperience,
     users: normalizedUsers,

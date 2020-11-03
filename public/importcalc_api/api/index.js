@@ -6,19 +6,19 @@ const reply = (res, body, timeout = 1300, status = 200) =>
     res.status(status).json(body);
   }, timeout);
 
-router.get('/ allExporters', function (req, res, next) {
-  reply(res, mocks. allExporters);
+router.get('/allExporters', function (req, res, next) {
+  reply(res, mocks.allExporters);
 });
 
 router.get('/normalizedProducts', function (req, res, next) {
   const id = req.query.id;
   let result = mocks.normalizedProducts;
   if (id) {
-    const  allExporters = mocks. allExporters.find(function (r) {
+    const allExporters = mocks.allExporters.find(function (r) {
       return r.id === id;
     });
-    if ( allExporters) {
-      result =  allExporters.menu.map(function (productId) {
+    if (allExporters) {
+      result = allExporters.menu.map(function (productId) {
         return mocks.products.find(function (product) {
           return product.id === productId;
         });
@@ -32,11 +32,11 @@ router.get('/normalizedExperience', function (req, res, next) {
   const id = req.query.id;
   let result = mocks.normalizedExperience;
   if (id) {
-    const  allExporters = mocks. allExporterss.find(function (r) {
+    const allExporters = mocks.allExporterss.find(function (r) {
       return r.id === id;
     });
-    if ( allExporters) {
-      result =  allExporters.reviews.map(function (reviewId) {
+    if (allExporters) {
+      result = allExporters.reviews.map(function (reviewId) {
         return mocks.reviews.find(function (review) {
           return review.id === reviewId;
         });

@@ -43,6 +43,7 @@ export const loadExchangeRates = () => {
 // }
 
 export const loadProducts = () => {
+    // debugger;
     return {
         type: LOAD_PRODUCTS,
         productsAPI: 'http://localhost:3001/api/normalizedProducts'
@@ -64,6 +65,6 @@ export const loadExporters = () => {
     // debugger;
     return {
         type: LOAD_EXPORTERS,
-        exporterAPI: 'http://localhost:3001/api/allExporters'
+        exportersAPI: 'http://localhost:3001/api/allExporters'
     }
 }
