@@ -1,20 +1,26 @@
 .exporter {
+    /* display: inline-block; */
+
     background-color: #AAA;
-    margin-top: 20px;
+    /* margin-top: 20px; */
+    width: 650px;
+    margin: 0 auto;
+    border-radius: 5px;
 }
 
 .exporter_name {
-    margin-top: 20px;
+    /* display: inline-block; */
+    margin: 20px 15px 0px 15px;
     background-color: #fff;
-    /* color: teal; */
     border-radius: 5px;
-    width: 95%;
-    margin: 0 auto;
-    margin-top: 30px;
+    /* margin: 15px auto; */
+    padding: 15px;
 }
 
 .exporter_name h2{
     /* color: red; */
+    vertical-align: middle;
     text-align: center;
-    line-height: 2em;
+    line-height: 1em;
+    margin: 0;
 }

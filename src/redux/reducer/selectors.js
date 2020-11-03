@@ -33,8 +33,6 @@ export const producstLoading = state => state.products.loading;
 export const producstLoaded = state => state.products.loaded;
 export const pruductsLoadingError = state => state.products.error;
 
-
-
 const ownPropsExperienceIdSelector = (_, ownProps) => {
     return ownProps.experienceId
 };
@@ -57,8 +55,6 @@ export const exporterSelector = createSelector( allExportersSelector, idSelector
             return buff;
         }
 );
-        
-
 
 export const orderBoxSelector = createSelector(productsSelector, orderSelector, (products, order) => {
      ;
@@ -78,8 +74,6 @@ export const experienceIdSelector = createSelector(experienceSelector, ownPropsE
     ( entities, experienceId) => {
         // debugger;
         if (!entities[0]) return {};
-        // if (props.loading || !props.loaded) return <Loader />;
-
         return entities.find((item) => item.id === experienceId)
 });
 
@@ -87,5 +81,4 @@ export const activeExporterSelector = (state, activeExporterId) => {
     // debugger;
     return state.allExporters.entities.find(
                 (exporter) => activeExporterId === exporter.id)
-
 }

@@ -7,7 +7,6 @@ import {
     producstLoaded,
     pruductsLoadingError,
     productsAlreadyLoadedSelector,
-
 } from '../../redux/reducer/selectors';
 
 // import { exporterSelector } from '../../redux/actions';

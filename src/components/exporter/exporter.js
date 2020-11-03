@@ -13,9 +13,6 @@ function Exporter(props) {
     // debugger;
     const [selectedСomponent, setSelectedСomponent] = useState('Products');
 
-    // if (!)
-
-
     if (selectedСomponent === 'Products') {
         return (
             <div className={styles.exporter}>
@@ -27,7 +24,7 @@ function Exporter(props) {
                 <Products exporter={props.activeExporter} />
             </div>
         );    
-    } else { //then only 'Feedbacks'
+    } else { 
         return (
             <div className={styles.exporter}>
                 <div className={styles.exporter_name}>

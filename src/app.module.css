@@ -1,5 +1,4 @@
 .wrapper {
- width: 100vh;
  margin: 0 auto;
 
 }
@@ -7,7 +6,7 @@
 .header {
   position: relative;
   background: linear-gradient(to right, #fefcea, #888);
-  height: 130px; 
+  height: 95px; 
 }
 
 .header_container {
@@ -17,19 +16,21 @@
 
 .content {
   display: grid;
-  grid-template-columns: 2fr 3fr; 
+  grid-template-columns: 4fr 1fr ;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .name {
-  top: 1em;
-  left: 50%;
+  position: absolute;
+  /* top: 1em; */
+  left: 150px;
   transform: translate(-50%);
   /* width: 50%; */
   /* text-align: center; */
   color: black;
   vertical-align: middle;
   margin: 0 auto;
-  position: absolute;
   height: 100px;
   width: 200px;
 }

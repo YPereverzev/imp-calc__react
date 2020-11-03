@@ -8,14 +8,23 @@ import { orderBoxSelector } from '../../redux/reducer/selectors';
 function OrderBox(props) {
     
     if (Object.keys(props.order).length === 0)  {
-        return (<div className={styles.orderBox}>
-            <h2>ЗАКАЗ пуст</h2>
-        </div>) 
+        return (
+            <div className={styles.container}>
+                <div className={styles.orderBox}>
+                    <h2>ЗАКАЗ</h2>
+                <div className={styles.summary}>
+                    <h3>Итого к оплате: 0 долл
+                    </h3>
+
+                </div>
+                </div>
+            </div>    
+        ) 
     }
 
     return (
-        <div className={styles.orderBox}>
-            <div>
+        <div className={styles.container}>
+            <div className={styles.orderBox}>
                 <h2>ЗАКАЗ</h2>
                 {props.orderedItemsForNow.map((item) => {
                     const qty = props.order[item.id]

@@ -5,15 +5,17 @@ import Search from './search';
 
 function Navigation(props) {
     return (
-        <div className={styles.navigation}>
-            <p>
-                Поставщики:
-            </p>
-            <Search 
-                exporters={props.exporters} 
-                onImporterClick={props.onImporterClick}
-            />
-            
+        <div>
+            <div className={styles.navigation}>
+                <p>
+                    Поставщики:
+                </p>
+                <Search 
+                    exporters={props.exporters} 
+                    onImporterClick={props.onImporterClick}
+                />
+                
+            </div>
         </div>
     );
 }

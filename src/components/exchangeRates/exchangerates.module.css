@@ -5,8 +5,7 @@
     position: absolute;
     bottom: 20px;
     right: 50px;
-    width: 200px;
-    padding: 10px;
+    padding: 0px 5px 0px 5px ;
     border-radius: 5px;
 
 }
@@ -17,7 +16,7 @@
 
 
 .exchangeRates p {
-    line-height: 0.7em;
+    line-height: 0.5em;
     font-size: 0.9em;
 }
 

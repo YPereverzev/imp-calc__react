@@ -16,9 +16,6 @@ const toObjProducts = (normalizedProducts) => normalizedProducts.reduce(
     (acc, product) => ({...acc, [product.id]: product}), {}
 );
 
-
-// products = toObjProducts
-
 export default (state = initialState, action) => {
 
     const { type, productsResponse, error } = action;

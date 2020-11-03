@@ -1,9 +1,9 @@
 .ordereditems {
     margin: 0px 0px 15px 0px;
     padding: 5px;
-    width: 500px;
+    min-width: 300px;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     line-height: 1em;
     background-color: #CCC;
     border-radius: 5px;

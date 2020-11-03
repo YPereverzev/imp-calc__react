@@ -1,8 +1,10 @@
 .navigation {
+    display: inline-block;
     background-color: #EEE;
     margin: 0px 20px 0px 20px;
     padding: 15px;
     border-radius: 5px;
+    min-width: 300px;
 }
 
 .nav_button {
@@ -11,7 +13,6 @@
 
 .wrapper {
     padding: 5px;
-    display: inline-block;
 }
 
 /* .navigation p {

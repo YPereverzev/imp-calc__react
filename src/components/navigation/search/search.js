@@ -3,7 +3,7 @@ import styles from './search.module.css'
 import SearchedImporters from '../searchedimporters'
 
 const Search = ( { exporters, onImporterClick } ) => {
-
+// debugger;
     const [filteredImporters, setFilteredImporters] = useState(exporters);
     
     useEffect(() => {
@@ -23,7 +23,7 @@ const Search = ( { exporters, onImporterClick } ) => {
                 
                 <input className={styles.search_field} 
                     id="search" 
-                    // type="search"
+                    // type="search"   
                     placeholder="найти поставщика"
                 >
                 </input>    

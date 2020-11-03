@@ -1,9 +1,7 @@
-// /api/products
-
 import { FAILURE, REQUEST, SUCCESS } from "../constants";
 
 export const loadProducts = (state) => (next) => async (action) => {
-    debugger;
+    // debugger;
     if (!action.productsAPI) return next(action);
     const { type, productsAPI, ...rest } = action;
     next({type: type + REQUEST, ...rest })    ;

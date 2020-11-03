@@ -1,12 +1,10 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import styles from './searchedimporters.module.css';
 import Loader from '../../loader';
-import { exportersAlreadyLoadedSelector } from '../../../redux/reducer/selectors';
 
 const SearchedImporters = (props) => {
     if (!props.exporters[0]) return <Loader />
-    debugger;
+
     return (
         <div>
             <div  className={styles.searchedImporters} >
@@ -20,7 +18,7 @@ const SearchedImporters = (props) => {
                         // autocomplete="off"
                         >
                         {props.exporters.map((item) => {
-                            debugger;
+                            // debugger;
                             console.log(item);
                                 return (
                                     <option 
@@ -33,9 +31,6 @@ const SearchedImporters = (props) => {
                         })} 
 
                         </select>
-                    <p>
-                        {/* <input type="submit" value="Отправить"></input> */}
-                    </p>
                 </form>
                 <p></p>
                 </div>      
@@ -43,11 +38,4 @@ const SearchedImporters = (props) => {
     );
 };
 
-const mapDispatchToProps = (state) => {
-    debugger;
-    return {
-        exporters: exportersAlreadyLoadedSelector(state)
-    }
-}
-
-export default connect(mapDispatchToProps)(SearchedImporters);        
+export default SearchedImporters;        

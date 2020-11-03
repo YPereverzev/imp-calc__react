@@ -5,11 +5,9 @@ import Exporters from './exporters';
 import OrderBox from './orderbox';
 import ExchangeRates from './exchangeRates';
 import Loader from './loader';
-
 import { loadExporters } from '../redux/actions';
 
 import { 
-    allExportersSelector, 
     usersSelector,
     exportersAlreadyLoadedSelector,
     exportersLoadingSelector,
@@ -20,9 +18,7 @@ import {
 import styles from '../app.module.css';
 import { connect } from 'react-redux';
 
-
 const log = console.log.bind(console);
-
 
 class App extends Component {
     constructor(props) {
@@ -41,9 +37,7 @@ class App extends Component {
     }
     
     render() {
-        
         if (this.props.loading || !this.props.loaded) return <Loader />
-        
         return (
             
             <div >
@@ -56,9 +50,7 @@ class App extends Component {
                                 Import calc 
                             </h1>
                         </div>
-
                             <ExchangeRates />
-
                     </div>
                 </div>
 

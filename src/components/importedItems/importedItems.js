@@ -1,22 +1,9 @@
 import React from 'react';
-// import counter from '../../hocs/counter';
 import PropTypes from "prop-types";
 import { connect } from 'react-redux';
 import { decrement, increment } from '../../redux/actions';
 import styles from './Importeditems.module.css';
 import Ordereditems from '../ordereditems';
-
-
-// loadExchangeRates, 
-//     exchangeRates, 
-//     loaded, 
-//     loading,
-//     loadingError,
-//     increment,
-//     decrement,
-//     id,
-//     item,
-//     order,
 
 function ImportedItems (props) {
     const amount = props.order;
@@ -71,20 +58,15 @@ const mapDispatchToProps = (dispatch) => {
     return {
         increment: (id) => dispatch(increment(id)),
         decrement: (id) => dispatch(decrement(id))
-
     }
 }
 
-
-//я получил id продукта вместо продукта
 const mapStateToProps = (state, ownProps) => {
     // debugger;
     return{
         item : state.products.entities[ownProps.id],
         order: state.order[ownProps.id] || 0,
     };
-
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(ImportedItems);

@@ -1,7 +1,17 @@
+.container {
+    position: relative;
+    /* display: inline-block; */
+    min-width: 350px;
+}
+
+
 .orderBox {
-    display: inline-block;
-    vertical-align: top;
-    width: 550px;
+    border-radius: 5px;
+    padding: 10px;
+    /* vertical-align: top; */
+    min-height: 150px;
+    /* height: 200px; */
+    
     background-color: #EEEEFF;
 }
 
