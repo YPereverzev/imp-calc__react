@@ -30,10 +30,7 @@ function OrderBox(props) {
                     const qty = props.order[item.id]
 
                     return <OrderedItems 
-                        key = {item.id}
-                        id = {item.id}
-                        name = {item.nameOfPc}
-                        price = {item.pricePerPc}
+                        item = {item}
                         qty = {qty}
                     />
                     })
@@ -48,7 +45,7 @@ function OrderBox(props) {
                 </div>
 
             </div>
-
+                        
         </div>
     )};
 

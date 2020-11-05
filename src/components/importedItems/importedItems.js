@@ -1,33 +1,30 @@
 import React from 'react';
 import PropTypes from "prop-types";
 import { connect } from 'react-redux';
-import { decrement, increment } from '../../redux/actions';
+// import { decrement, increment } from '../../redux/actions';
 import styles from './Importeditems.module.css';
 import Ordereditems from '../ordereditems';
 
 function ImportedItems (props) {
-    const amount = props.order;
     // debugger;
     return (
         <div className={styles.importedItems}
         data-test-id="ImportedItems">
             <Ordereditems 
-            id = {props.item.id}
-            name = {props.item.nameOfPc}
-            price = {props.item.pricePerPc}
-            qty = {amount}
+            item = {props.item}
+            qty = {props.order}
             />
 
             <div className={styles.volume_weight_container}>
 
             <div className={styles.volume}>
                 <p>Объем:{props.item.volumePerPc} м3/шт </p>
-                <p><b>Итого :{(props.item.volumePerPc*amount).toFixed(1)} м3</b></p>
+                <p><b>Итого :{(props.item.volumePerPc*props.order).toFixed(1)} м3</b></p>
             </div>
             <div className={styles.space}></div>
             <div className={styles.weight}>
                 <p>Вес:{props.item.weightPerPc} кг/шт </p>
-                <p><b>Итого :{(props.item.weightPerPc*amount).toFixed(1)}* кг</b></p>
+                <p><b>Итого :{(props.item.weightPerPc*props.order).toFixed(1)}* кг</b></p>
             </div>
             </div>
             <div className={styles.state_regulation}>
@@ -40,7 +37,7 @@ function ImportedItems (props) {
                 <p>Пошлина: {props.item.duty.toString()} %</p>
                 <p>НДС: {props.item.vat.toString()} %</p>
             </div>
-            <p> Сумма: {amount*props.item.pricePerPc} USD</p>  
+            <p> Сумма: {props.order*props.item.pricePerPc} USD</p>  
         </div>
     );
 }
@@ -54,12 +51,12 @@ ImportedItems.propType = {
     }).isRequired
 } 
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        increment: (id) => dispatch(increment(id)),
-        decrement: (id) => dispatch(decrement(id))
-    }
-}
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         increment: (id) => dispatch(increment(id)),
+//         decrement: (id) => dispatch(decrement(id))
+//     }
+// }
 
 const mapStateToProps = (state, ownProps) => {
     // debugger;
@@ -69,4 +66,4 @@ const mapStateToProps = (state, ownProps) => {
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ImportedItems);
+export default connect(mapStateToProps)(ImportedItems);

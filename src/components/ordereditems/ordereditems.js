@@ -5,24 +5,25 @@ import { increment, decrement, clearPosition } from '../../redux/actions';
 import styles from './ordereditems.module.css';
 
 
-function Ordereditems(props) {
+function Ordereditems({item, qty, increment, decrement}) {
+    // debugger;
     return (
         <div className={styles.ordereditems}>
-            <p> {props.name}:</p>
+            <p> {item.nameOfPc}:</p>
             <div className={styles.editing}>
                 <button className={`${styles.item} ${styles.control_button}`}
-                    onClick={() => props.increment(props.id)}>
+                    onClick={() => increment(item.id)}>
                         +
                 </button>
 
-                <div className={styles.item}
+                <div className={`${styles.item} + ${styles.qty}`}
                 onClick={qtyHandler}
                 >
-                       <p> {props.qty} </p>
+                       <p> {qty} </p>
                 </div>     
 
                 <button className={`${styles.item} ${styles.control_button}`}
-                    onClick={() => props.decrement(props.id)}>
+                    onClick={() => decrement(item.id)}>
                         -
                 </button>
             </div>
@@ -30,19 +31,53 @@ function Ordereditems(props) {
             <div className={styles.summary}>
                 <p className={styles.item}> 
                     <b>
-                        ${props.qty * props.price} $
+                        ${qty * item.pricePerPc} $
                     </b>
                   
                 </p>
                 <button className={`${styles.item} ${styles.delete_button}`}
-                    onClick={() => props.clearPosition(props.id)}>
+                    onClick={() => clearPosition(item.id)}>
                     Х
                 </button>
             </div>
 
+            <div className={styles.duty}>
+                Пошлина: ${dutyCalc(qty, item).toFixed(2)} $
+            </div>
+
+            <div className={styles.vat}>
+                НДС: ${vatCalc(qty, item).toFixed(2)} $
+            </div>
+
+            <div className={styles.payment}>
+            </div>
+            
+                <p className={styles.item}> 
+                    <b>
+                    </b>
+                  
+                </p>
+             
+
         </div>
     );
 }
+
+const paymentBeforeTaxes = (qty, item) => {
+    return qty * item.pricePerPc
+}
+
+const dutyCalc = (qty, item) => {
+    // debugger;
+    return qty * item.pricePerPc * item.duty / 100
+}
+
+const vatCalc = (qty, item) => {
+    // debugger;
+    return (dutyCalc(qty, item) + paymentBeforeTaxes(qty, item)) * (item.vat / 100)
+}
+
+
 
 const qtyHandler = (event) => {
     
@@ -59,11 +94,11 @@ const mapDispatchToProps = (dispatch) => {
     };
 }
 
-const mapStateToProps = (state) => {
-    return {
-        order : state.order
-        // importItems: state.importItems
-    }
-};
+// const mapStateToProps = (state) => {
+//     return {
+//         order : state.order
+//         // importItems: state.importItems
+//     }
+// };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Ordereditems);
+export default connect(null, mapDispatchToProps)(Ordereditems);

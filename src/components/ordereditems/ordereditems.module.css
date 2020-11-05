@@ -13,6 +13,12 @@
     display: inline-block;
 }
 
+.qty {
+    width: 20px;
+    text-align: right;
+    padding: 0px 5xp 0px 5xp;
+}
+
 .control_button {
     margin: 0px 5px 0px 5px;
 }
