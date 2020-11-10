@@ -14,10 +14,15 @@ function Choice(props) {
             
             <button 
             className={styles.button}
+            onClick={() => props.setComponent('AddProduct')}>
+                Add product
+            </button>
+
+            <button 
+            className={styles.button}
             onClick={() => props.setComponent('Feedbacks')}>
                 Feedbacks
             </button>
-            
         </div>
     );
 }

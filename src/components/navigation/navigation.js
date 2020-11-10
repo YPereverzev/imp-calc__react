@@ -5,7 +5,7 @@ import Search from './search';
 
 function Navigation(props) {
     return (
-        <div>
+        <div className={styles.wrapper}>
             <div className={styles.navigation}>
                 <p>
                     Поставщики:
@@ -19,6 +19,7 @@ function Navigation(props) {
         </div>
     );
 }
+
 
 Navigation.propTypes = {
     products: PropTypes.arrayOf(PropTypes.shape({

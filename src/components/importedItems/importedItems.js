@@ -3,14 +3,14 @@ import PropTypes from "prop-types";
 import { connect } from 'react-redux';
 // import { decrement, increment } from '../../redux/actions';
 import styles from './Importeditems.module.css';
-import Ordereditems from '../ordereditems';
+import OrdereditemsOrder from './ordereditemsorder';
 
 function ImportedItems (props) {
-    // debugger;
+    
     return (
         <div className={styles.importedItems}
         data-test-id="ImportedItems">
-            <Ordereditems 
+            <OrdereditemsOrder 
             item = {props.item}
             qty = {props.order}
             />
@@ -31,7 +31,7 @@ function ImportedItems (props) {
                 Тарифное и нетарифное регуллирование: <br/>
                 <p> КОД УКТВЭД: 
                     <a href={props.item.customs_code.codeHref} target="_blank"> 
-                        {props.item.customs_code.code} 
+                        {` `}{props.item.customs_code.code} 
                     </a>
                 </p>
                 <p>Пошлина: {props.item.duty.toString()} %</p>
@@ -59,7 +59,7 @@ ImportedItems.propType = {
 // }
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger;
+    
     return{
         item : state.products.entities[ownProps.id],
         order: state.order[ownProps.id] || 0,

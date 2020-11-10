@@ -1,41 +1,43 @@
+@import '../node_modules/bootstrap/dist/css/bootstrap.css';
 .wrapper {
  margin: 0 auto;
 
 }
 
-.header {
-  position: relative;
-  background: linear-gradient(to right, #fefcea, #888);
-  height: 95px; 
-}
-
 .header_container {
-  margin: 20px 0xp 20px 0xp;
-  padding: 30px;
+  position: relative;
 }
 
-.content {
-  display: grid;
-  grid-template-columns: 4fr 1fr ;
-  width: 80%;
-  margin: 0 auto;
+.header {
+  background: linear-gradient(to right, #DDD, #777);
+  padding-right: 200px;
 }
 
 .name {
-  position: absolute;
-  /* top: 1em; */
-  left: 150px;
-  transform: translate(-50%);
-  /* width: 50%; */
-  /* text-align: center; */
+  left: 30px;
+  display: inline-block;
+  margin: 30px;
   color: black;
-  vertical-align: middle;
-  margin: 0 auto;
-  height: 100px;
-  width: 200px;
 }
 
-.name h1{
-  color: #123456;
+button {
+  border: solid 1px white ;
+  outline: none;
+  border-radius: 2px !important;
+  background-color: #BBB;
+}
+
+button:focus {
+  outline: none !important;
+  color: #DDD !important;;
+  border  : solid 1px black !important;
+  background-color: #AAA !important;
+  
+  /* color: #fff; */
+}
+
+button:hover {
+  background-color: #888 !important;
+  color: #DDD !important;;
 
 }

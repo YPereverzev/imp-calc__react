@@ -21,7 +21,7 @@ const AddFeedback = (props) => {
                         <textarea className={styles.form__textarea} id="feedback_area"></textarea>
                     </p>
                     <p>
-                        <button className={styles.form__submit_button} /*primary block*/>PUBLISH REVIEW</button>
+                        <button className={styles.form__submit_button} >PUBLISH REVIEW</button>
                     </p>                    
                 </fieldset>
             </form>

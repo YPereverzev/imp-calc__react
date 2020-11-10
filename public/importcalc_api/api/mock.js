@@ -3,7 +3,7 @@ const allExporters = [
       id :'12341234-2341234',
       exporterName: "ImpExp LTD", 
       location : 'EU, Germany',
-      image : 'https://.....',
+      image : 'https://www.garrett.jpg',
       products : [
         "01",
         "02",

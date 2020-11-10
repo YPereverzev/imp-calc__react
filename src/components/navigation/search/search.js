@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import styles from './search.module.css'
-import SearchedImporters from '../searchedimporters'
+import SearchedImporters from '../searchedimporters';
+import SearchIcon from './icon/search.svg';
 
 const Search = ( { exporters, onImporterClick } ) => {
-// debugger;
+
     const [filteredImporters, setFilteredImporters] = useState(exporters);
     
     useEffect(() => {
@@ -16,9 +17,9 @@ const Search = ( { exporters, onImporterClick } ) => {
     return (
         <div className={styles.search}>
             <div className={styles.search_container}>
-                <img className={styles.search_logo}
+                <img className={`${styles.search_logo}  ${styles.SearchIcon}`}
                     alt="поиск"
-                    src="https://cdn.icon-icons.com/icons2/1660/PNG/512/3844467-magnifier-search-zoom_110341.png"
+                    src={SearchIcon}
                 ></img>
                 
                 <input className={styles.search_field} 

@@ -1,4 +1,3 @@
-
 import 'normalize.css';
 import React, { Component } from 'react';
 import Exporters from './exporters';
@@ -17,50 +16,37 @@ import {
 
 import styles from '../app.module.css';
 import { connect } from 'react-redux';
-
-const log = console.log.bind(console);
+import { Route } from 'react-router-dom';
 
 class App extends Component {
     constructor(props) {
         super();
-        // debugger;
+        
         this.state = {props};
         if (!props.loaded || !props.loading) props.loadExporters();
     }
     
-    componentDidMount() {
-        log('componentDidMounted');
-    }
-    
-    componentDidUpdate() {
-        log('componentDidUpdate');
-    }
-    
+   
     render() {
         if (this.props.loading || !this.props.loaded) return <Loader />
         return (
             
-            <div >
-                <div className={styles.header_container}>
-
-                    <div className={styles.header}>
-                        
-                        <div className={styles.name}>
-                            <h1 >
-                                Import calc 
-                            </h1>
+            <div class="container-xl p-0">
+                    <div className={`${styles.header_container}`} 
+                    >
+                        <div className={styles.header}>
+                            <div className={styles.name}>
+                                <h1 >
+                                Сustoms Сlearance Сalculator
+                                </h1>
+                            </div>
+                                <ExchangeRates />
                         </div>
-                            <ExchangeRates />
-                    </div>
-                </div>
-
-                <div className={styles.wrapper}>
-                    <div className={styles.content}>
-                        <Exporters />
-                        <OrderBox />
                     </div>
 
-                </div>
+                    <Route path='/orderDetail' component={OrderBox}></Route>
+                    <Route path='/' exact component={Exporters}></Route>
+
             </div>
         );
     }

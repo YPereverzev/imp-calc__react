@@ -18,7 +18,7 @@ export default (state = initialState, action) => {
 
     switch (type) {
         case LOAD_EXPORTERS + REQUEST:
-            // debugger;
+            
             return {
                 ...state,
                 loading: true,

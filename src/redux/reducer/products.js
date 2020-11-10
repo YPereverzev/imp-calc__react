@@ -38,7 +38,7 @@ export default (state = initialState, action) => {
             };
         
         case LOAD_PRODUCTS + SUCCESS:
-            // debugger;
+            
             return {
                 ...state,
                 loading: false,

@@ -16,9 +16,12 @@ import { connect } from 'react-redux';
 function Products (props){
 
     useEffect(() => {
-        if (!props.loaded) loadProducts()
+        if (!props.loaded) {
+            
+            loadProducts()
+        }
     }, []) //eslint-disable-line
-    // debugger;
+    
     if (props.loading || !props.loaded) return <Loader />
 
     return (

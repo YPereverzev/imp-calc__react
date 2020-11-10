@@ -1,7 +1,15 @@
-.nav_button {
-    width: 100%;
+.searchedImporters_form select:focus {
+    box-shadow: none;
+    outline: none;
+    border: 1px solid gray;
+    background-color: #fff;
 }
 
-.searchedImporters_form {
-    background-color: #green;
+.searchedImporters_form select select:checked {
+    background-color: #fff;
+    box-shadow: green;
+  }
+
+  .searchedImporters_form select select:focus { 
+     background-color: red;
 }

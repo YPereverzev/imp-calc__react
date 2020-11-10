@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import styles from './exchangerates.module.css';
+import styles from './exchangerates.module.scss';
 import { 
     exchangeRatesSelector, 
     exchangeRatesLoaded, 

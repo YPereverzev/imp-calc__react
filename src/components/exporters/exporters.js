@@ -3,31 +3,47 @@ import Navigation from '../navigation';
 import Exporter from '../exporter';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import OrderBox from '../orderbox';
 import { 
+    producstLoaded,
     allExportersSelector, 
 } from '../../redux/reducer/selectors';
 
 import { loadProducts } from '../../redux/actions';
 import styles from './exporters.module.css';
 
-function Exporters (props) {
+function Exporters ({exporters, loaded, loadProducts, match, history}) {
     
     useEffect(() => {
-        // debugger;
-        if (!props.loaded) props.loadProducts();
+        if (!loaded) loadProducts();
     }, []) //eslint-disable-line
-
-    const [activeExporterId, setActiveExporter] = useState(props.exporters[0].id);
+    // debugger;
     
+    const [activeExporterId, setActiveExporter] = useState(exporters[0].id);
+    // history.push(`/${activeExporterId}`)
+
     return (
         <div className={styles.exporters}>
-            <Navigation 
-                exporters={props.exporters}
-                onImporterClick={setActiveExporter}
-            />
-            <Exporter 
-                activeExporterId={activeExporterId}
-            />
+            <div class="container p-0">
+                <div class="row p-0">
+                    <div class="col p-0">
+                        <Navigation 
+                            exporters={exporters}
+                            onImporterClick={setActiveExporter}
+                        />
+                    </div>    
+
+                    <div  class="col-lg-6 p-0">
+                        <Exporter
+                            activeExporterId={activeExporterId}
+                        />
+                    </div>
+                    <div class="col p-0">
+                        <OrderBox />
+                    </div>
+                </div>
+
+            </div>
         </div>
         );
 };
@@ -40,11 +56,12 @@ Exporters.propTypes = {
 
 const mapStateToProps = (state) =>({
     exporters: allExportersSelector(state),
+    loaded: producstLoaded(state),
 })
 
 const mapDispatchToProps = (dispatch) => {
-    // debugger;
- return {
+    
+    return {
     loadProducts: () => dispatch(loadProducts())
  }
 }

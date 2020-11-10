@@ -10,32 +10,34 @@ import { connect } from 'react-redux';
 
 
 function Exporter(props) {
-    // debugger;
+    
     const [selectedСomponent, setSelectedСomponent] = useState('Products');
 
-    if (selectedСomponent === 'Products') {
-        return (
+    return (
+        <div>
             <div className={styles.exporter}>
                 
                 <div className={styles.exporter_name}>
                     <h2>{props.activeExporter.exporterName}</h2>
                 </div>
                 <Choice setComponent={setSelectedСomponent}/>
-                <Products exporter={props.activeExporter} />
+                {(() => {
+                    switch (selectedСomponent) {
+                        case 'Products':
+                            return <Products exporter={props.activeExporter} />
+                    
+                        case 'Feedbacks':
+                            return <Feedbacks activeExporter={props.activeExporter}/>
+
+                        case 'AddProduct':
+                            return 'DONE!'
+                        default:
+                            break;
+                    }
+                }) ()}
             </div>
-        );    
-    } else { 
-        return (
-            <div className={styles.exporter}>
-                <div className={styles.exporter_name}>
-                    <h2>{props.activeExporter.exporterName}</h2>
-                </div>
-                
-                <Choice setComponent={setSelectedСomponent}/>
-                <Feedbacks activeExporter={props.activeExporter}/>
-            </div>
-        );    
-    }
+        </div>
+    );    
     
 }
 
@@ -44,7 +46,7 @@ Exporter.propTypes = {
 }
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger;
+    
     return {
         activeExporter: activeExporterSelector(state, ownProps.activeExporterId)
     }

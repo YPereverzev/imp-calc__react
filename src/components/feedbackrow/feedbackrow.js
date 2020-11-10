@@ -19,7 +19,7 @@ const FeedbackRow = ( props ) => {
         if (!props.loaded) props.loadExperience();
         //rewrite: one request per id by experience
     }, []) //eslint-disable-line
-    // debugger;
+    
     if (props.loading || !props.loaded) return <Loader />;
 
 
@@ -39,7 +39,7 @@ const FeedbackRow = ( props ) => {
 };
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger;
+    
     return {
         experience: experienceIdSelector(state, ownProps),
         users: usersSelector(state),

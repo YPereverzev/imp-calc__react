@@ -12,7 +12,8 @@ const SearchedImporters = (props) => {
                     method="post"
                 >
                         <select 
-                        size="4" 
+                        class="custom-select"
+                        // size="4" 
                         multiple 
                         name="serchedImporters"
                         // autocomplete="off"
@@ -22,17 +23,16 @@ const SearchedImporters = (props) => {
                             console.log(item);
                                 return (
                                     <option 
-                                        className={styles.nav_button}
                                         key={item.id} 
-                                        onClick={() => props.onImporterClick(item.id)}>
-                                        {item.exporterName}
+                                        onClick={() => props.onImporterClick(item.id )}>
+                                            {item.exporterName}
                                     </option>
+
                                 )
                         })} 
 
                         </select>
                 </form>
-                <p></p>
                 </div>      
         </div>
     );

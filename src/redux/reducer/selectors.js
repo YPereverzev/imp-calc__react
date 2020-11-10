@@ -7,7 +7,7 @@ export const usersSelector = state => state.users;
 
 export const  experienceSelector = state => 
 {
-    // debugger;
+    
     return state.experience.entities;
 
 }
@@ -38,7 +38,7 @@ const ownPropsExperienceIdSelector = (_, ownProps) => {
 };
 
 export const  allExportersSelector = state => {
-    // debugger;
+    
     return state.allExporters.entities || [{
         id: "01"
     }];
@@ -49,7 +49,7 @@ const idSelector = (_, ownProps) => {
 };
 export const exporterSelector = createSelector( allExportersSelector, idSelector,
     (importItems, id) => {
-        // debugger;
+        
          const buff = importItems.find(
             (exporter) => exporter.id === id)
             return buff;
@@ -72,13 +72,13 @@ export const orderBoxSelector = createSelector(productsSelector, orderSelector, 
 
 export const experienceIdSelector = createSelector(experienceSelector, ownPropsExperienceIdSelector,
     ( entities, experienceId) => {
-        // debugger;
+        
         if (!entities[0]) return {};
         return entities.find((item) => item.id === experienceId)
 });
 
 export const activeExporterSelector = (state, activeExporterId) => {
-    // debugger;
+    
     return state.allExporters.entities.find(
                 (exporter) => activeExporterId === exporter.id)
 }
