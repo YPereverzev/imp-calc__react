@@ -1,0 +1,35 @@
+.wrapper {
+    margin: 10px 20px 10px 20px;
+    padding: 20px;
+    background-color: #DDD;
+    border-radius: 5px;
+    
+}
+
+.block{
+    display: inline-block;
+    width: 46%;
+
+}
+
+.input-group {
+    /* display: inline-block; */
+}
+
+.block_wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.price{
+    width: 40%;
+}
+
+
+
+
+
+
+
+

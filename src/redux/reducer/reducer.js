@@ -7,6 +7,8 @@ import users from './users';
 import addFeedback from './addfeedback';
 import addExchangeRates from './addexchangerates';
 import loadExporters from './loadExporters';
+import addNewProduct from './addNewProduct';
+
 
 export default combineReducers({
    order: orderReducer,
@@ -17,4 +19,5 @@ export default combineReducers({
    addFeedback: addFeedback,
    addExchangeRates: addExchangeRates,
    allExporters: loadExporters,
+   // addNewProduct: addNewProduct,
 }) 

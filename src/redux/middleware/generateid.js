@@ -2,7 +2,7 @@ import { v4 as uuid } from 'uuid';
 
 export default (store) => (next) => (action) => {
     if (!action.generateId) return next(action);
-    
+    debugger;
     const {generateId, ...rest} = action;
     // buffering variables added as idGenerated and result for DEV
     const idGenerated = generateId.reduce((acc, key) => {

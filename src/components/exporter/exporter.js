@@ -6,6 +6,7 @@ import Choice from '../choice';
 import styles from './exporter.module.css';
 import { activeExporterSelector } from '../../redux/reducer/selectors';
 import { connect } from 'react-redux';
+import AddProduct from '../addproduct/addproduct';
 
 
 
@@ -30,7 +31,7 @@ function Exporter(props) {
                             return <Feedbacks activeExporter={props.activeExporter}/>
 
                         case 'AddProduct':
-                            return 'DONE!'
+                            return <AddProduct activeExporter={props.activeExporter}/>
                         default:
                             break;
                     }

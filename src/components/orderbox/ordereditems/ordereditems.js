@@ -4,6 +4,11 @@ import { connect } from 'react-redux';
 import { increment, decrement, clearPosition } from '../../../redux/actions';
 import styles from './ordereditems.module.css';
 
+import {
+    productsAlreadyLoadedSelector,
+    allExportersSelector,
+} from '../../../redux/reducer/selectors';
+
 import Plus from './icons/plus.svg';
 import Minus from './icons/minus.svg';
 import Delete from './icons/delete.svg';
@@ -106,11 +111,11 @@ const mapDispatchToProps = (dispatch) => {
     };
 }
 
-// const mapStateToProps = (state) => {
-//     return {
-//         order : state.order
-//         // importItems: state.importItems
-//     }
-// };
+const mapStateToProps = (state) => {
+    return {
+        products: productsAlreadyLoadedSelector(state),
+        exporters: allExportersSelector(state),
+    }
+};
 
-export default connect(null, mapDispatchToProps)(Ordereditems);
+export default connect(mapStateToProps, mapDispatchToProps)(Ordereditems);

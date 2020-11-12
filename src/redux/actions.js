@@ -7,7 +7,8 @@ import {
     LOAD_EXCHANGE_RATES,
     LOAD_PRODUCTS,
     LOAD_EXPERIENCE,
-    LOAD_EXPORTERS
+    LOAD_EXPORTERS,
+    ADD_PRODUCT,
  } from "./constants";
 
 export const increment = (id) => ({ type : INCREMENT, payload: { id }});
@@ -66,5 +67,15 @@ export const loadExporters = () => {
     return {
         type: LOAD_EXPORTERS,
         exportersAPI: 'http://localhost:3001/api/allExporters'
+    }
+}
+
+export const addProduct = (newProductInfo) => {
+    console.log('ADD_PRODUCT');
+    debugger;
+    return {
+        type: ADD_PRODUCT,
+        payload: newProductInfo,
+        generateId: ['id'],
     }
 }

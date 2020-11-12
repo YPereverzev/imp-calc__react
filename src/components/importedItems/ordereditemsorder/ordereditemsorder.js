@@ -62,11 +62,11 @@ function OrdereditemsOrder({item, qty, increment, decrement, clearPosition}) {
             </div>
 
             <div className={styles.duty}>
-                Пошлина: ${dutyCalc(qty, item).toFixed(2)} $
+                Пошлина: {dutyCalc(qty, item).toFixed(2)} $
             </div>
 
             <div className={styles.vat}>
-                НДС: ${vatCalc(qty, item).toFixed(2)} $
+                НДС: {vatCalc(qty, item).toFixed(2)} $
             </div>
 
             <div className={styles.payment}>

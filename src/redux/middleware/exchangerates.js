@@ -13,8 +13,8 @@ export default state => next => async action => {
          ;
         const exRatesResponse = await exRates.json();
             console.log(exRates);
-            next({ exRatesResponse, type: type + SUCCESS, ...rest });
+            return next({ exRatesResponse, type: type + SUCCESS, ...rest });
         } catch (error){
-            next({ error, type: type + FAILURE, ...rest });
+            return next({ error, type: type + FAILURE, ...rest });
         }
 }
