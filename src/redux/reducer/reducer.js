@@ -9,15 +9,14 @@ import addExchangeRates from './addexchangerates';
 import loadExporters from './loadExporters';
 import addNewProduct from './addNewProduct';
 
-
 export default combineReducers({
-   order: orderReducer,
-   importItems: importItems,
-   experience: experience,
-   products: products,
-   users: users,
-   addFeedback: addFeedback,
-   addExchangeRates: addExchangeRates,
-   allExporters: loadExporters,
-   // addNewProduct: addNewProduct,
-}) 
+  order: orderReducer,
+  importItems: importItems,
+  experience: experience,
+  products: products,
+  users: users,
+  addFeedback: addFeedback,
+  addExchangeRates: addExchangeRates,
+  allExporters: loadExporters,
+  // addNewProduct: addNewProduct,
+});
