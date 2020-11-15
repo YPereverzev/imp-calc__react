@@ -8,36 +8,30 @@ import { exporterSelector } from '../../redux/reducer/selectors';
 import styles from './feedbacks.module.css';
 
 function Feedbacks(props) {
-    return (
-        <div className={styles.feedbacks}>
-            <Rate activeExporter={props.activeExporter}/>
-            
-            {props.activeExporter.experience.map((experience) => {
-                return <FeedbackRow key={experience} experienceId={experience}/>
-            })}
+  return (
+    <div className={styles.feedbacks}>
+      <Rate activeExporter={props.activeExporter} />
 
-            <AddFeedback exporter={props.activeExporter}/>
-        </div>
-    );
+      {props.activeExporter.experience.map((experience) => {
+        return <FeedbackRow key={experience} experienceId={experience} />;
+      })}
+
+      <AddFeedback exporter={props.activeExporter} />
+    </div>
+  );
 }
-
-
-
 
 Feedbacks.propTypes = {
-    activeExporter: PropTypes.shape({
-        experience: PropTypes.arrayOf(PropTypes.string)
-    }).isRequired
-}
-
-
-
+  activeExporter: PropTypes.shape({
+    experience: PropTypes.arrayOf(PropTypes.string),
+  }).isRequired,
+};
 
 const mapStateToProps = (state, ownProps) => {
-    return {
-        activeExporter: exporterSelector(state, ownProps)
-        // ownProps: ownProps
-    }
-}
+  return {
+    activeExporter: exporterSelector(state, ownProps),
+    // ownProps: ownProps
+  };
+};
 
-export default connect(mapStateToProps)(Feedbacks) ;
+export default connect(mapStateToProps)(Feedbacks);

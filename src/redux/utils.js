@@ -1,10 +1,8 @@
 import { createSelector } from 'reselect';
 
-export const arrToMap = (arr) =>
-  arr.reduce((acc, item) => ({ ...acc, [item.id]: item }), {});
+export const arrToMap = (arr) => arr.reduce((acc, item) => ({ ...acc, [item.id]: item }), {});
 
-export const getAverage = (arr) =>
-  arr.reduce((acc, rating) => acc + rating) / arr.length;
+export const getAverage = (arr) => arr.reduce((acc, rating) => acc + rating) / arr.length;
 
 const idSelector = (_, props) => props.id;
 

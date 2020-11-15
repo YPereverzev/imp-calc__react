@@ -1,5 +1,3 @@
 describe('Product', () => {
-    it('Feedback should redter', () => {
-        
-    })
-})  
+  it('Feedback should redter', () => {});
+});

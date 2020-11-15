@@ -1,116 +1,111 @@
 .ordereditems {
-    margin: 0px 0px 15px 0px;
-    padding: 5px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    line-height: 1em;
-    background-color: #CCC;
-    border-radius: 5px;
-    line-height: 2em;
-    text-align: right;
-    grid-auto-rows: 35px;
-    padding: 15px;
-
+  margin: 0px 0px 15px 0px;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  line-height: 1em;
+  background-color: #ccc;
+  border-radius: 5px;
+  line-height: 2em;
+  text-align: right;
+  grid-auto-rows: 35px;
+  padding: 15px;
 }
 
 .name p {
-    text-align: left;
+  text-align: left;
 }
 
- .name {
-    grid-column-start: 1; 
-    grid-column-end: 2; 
-    grid-row-start: 1; 
-    grid-row-end: 3; 
-    text-align: left;
+.name {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  text-align: left;
 }
 
 button {
-    position: relative;
+  position: relative;
 }
 
 .plus {
-    width: 19px;
-    position: absolute;
-    top: 6px;
-    left: 2px
+  width: 19px;
+  position: absolute;
+  top: 6px;
+  left: 2px;
 }
 
 .minus {
-    width: 19px;
-    height: 5px;
-    position: absolute;
-    top: 12px;
-    left: 2px
-}   
+  width: 19px;
+  height: 5px;
+  position: absolute;
+  top: 12px;
+  left: 2px;
+}
 
 .delete {
-    width: 16px;
-    position: absolute;
-    top: 6px;
-    left: 4px
+  width: 16px;
+  position: absolute;
+  top: 6px;
+  left: 4px;
 }
 
 .duty {
-    text-align: right;
-    grid-column-start: 3; 
-    grid-column-end: 4; 
-    grid-row-start: 2; 
-    grid-row-end: 3; 
+  text-align: right;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 
 .vat {
-    text-align: right;
-    grid-column-start: 2; 
-    grid-column-end: 5; 
-    grid-row-start: 3; 
-    grid-row-end: 4; 
+  text-align: right;
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 4;
 }
 
-
 .payment {
-    text-align: right;
-    grid-column-start: 2; 
-    grid-column-end: 5; 
-    grid-row-start: 4; 
-    grid-row-end: 5; 
+  text-align: right;
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 4;
+  grid-row-end: 5;
 }
 
 .item {
-    display: inline-block;
+  display: inline-block;
 }
 
 .qty {
-    /* width: 20px; */
-    text-align: right;
-    padding: 0px 5px 0px 5xp;
-    display: inline-block;
+  /* width: 20px; */
+  text-align: right;
+  padding: 0px 5px 0px 5xp;
+  display: inline-block;
 }
 
 .btn_wrapper {
-    display: inline-block;
-    margin-left: 10px;
+  display: inline-block;
+  margin-left: 10px;
 }
 
 .qty_wrapper {
-    display: inline-block;
-
+  display: inline-block;
 }
 
 .control_button,
 .delete_button {
-    margin: 0px 4px;
-    padding: 0px;
-    height: 30px;
-    width: 26px;
-    vertical-align: middle;
-    display: inline-block;
-    border-radius: 3px;
+  margin: 0px 4px;
+  padding: 0px;
+  height: 30px;
+  width: 26px;
+  vertical-align: middle;
+  display: inline-block;
+  border-radius: 3px;
 }
-
 
 .summary {
-    text-align: end;
-    vertical-align: middle;
+  text-align: end;
+  vertical-align: middle;
 }
-

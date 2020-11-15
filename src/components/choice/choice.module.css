@@ -1,9 +1,9 @@
 .choice {
-    margin: 30px 10px 10px 20px;
+  margin: 30px 10px 10px 20px;
 }
 
 .button {
-    margin-right: 5px;
-    border-radius: 5px;
-    background-color: #BBB;
+  margin-right: 5px;
+  border-radius: 5px;
+  background-color: #bbb;
 }

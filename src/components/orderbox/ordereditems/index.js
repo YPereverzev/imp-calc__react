@@ -1,1 +1,1 @@
-export { default }  from './ordereditems';
+export { default } from './ordereditems';
