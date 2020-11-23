@@ -5,16 +5,21 @@ function Choice(props) {
   return (
     <div className={styles.choice}>
       <button className={styles.button} onClick={() => props.setComponent('Products')}>
-        Products
+        Товары
       </button>
 
       <button className={styles.button} onClick={() => props.setComponent('AddProduct')}>
-        Add product
+        Добавить товар
       </button>
 
-      <button className={styles.button} onClick={() => props.setComponent('Feedbacks')}>
-        Feedbacks
+      <button className={styles.button} onClick={() => props.setComponent('AddExporter')}>
+        Добавить экпортера
       </button>
+
+      <button title='в разработке' className={styles.button} onClick={() => props.setComponent('Feedbacks')}>
+        Фидбек
+      </button>
+
     </div>
   );
 }

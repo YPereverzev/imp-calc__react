@@ -6,19 +6,15 @@ const SearchedImporters = (props) => {
   if (!props.exporters[0]) return <Loader />;
 
   return (
-    <div>
-      <div className={styles.searchedImporters}>
+    <div data-test="SearchedImporters">
+      <div className={styles.searchedImporters} >
         <form className={styles.searchedImporters_form} method="post">
           <select
-            class="custom-select"
-            // size="4"
+            className="custom-select"
             multiple
             name="serchedImporters"
-            // autocomplete="off"
           >
             {props.exporters.map((item) => {
-             
-              console.log(item);
               return (
                 <option key={item.id} onClick={() => props.onImporterClick(item.id)}>
                   {item.exporterName}

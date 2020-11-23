@@ -15,7 +15,7 @@ const Search = ({ exporters, onImporterClick }) => {
 
   return (
     <div className={styles.search}>
-      <div className={styles.search_container}>
+      <div className={styles.search_container} >
         <img
           className={`${styles.search_logo}  ${styles.SearchIcon}`}
           alt="поиск"
@@ -35,7 +35,6 @@ const Search = ({ exporters, onImporterClick }) => {
 };
 
 const searchHandler = (event, setFilteredImporters, exporters) => {
-  console.log('ищу');
   if (!event) return exporters;
 
   const filteredExporters = exporters.filter((item) => {

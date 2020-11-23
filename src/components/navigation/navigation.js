@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './navigation.module.css';
 import Search from './search';
+import Clock from '../clock';
 
 function Navigation(props) {
    
@@ -10,6 +11,11 @@ function Navigation(props) {
       <div className={styles.navigation}>
         <p>Поставщики:</p>
         <Search exporters={props.exporters} onImporterClick={props.onImporterClick} />
+        <Clock id={'Ukraine'} loacation={`Украина`} timeShift={0}/>
+        <Clock id={'USA'} loacation={`США`} timeShift={-5}/>
+        <Clock id={'EU'} loacation={`Европа`} timeShift={1}/>
+        <Clock id={'China'} loacation={`Китай`} timeShift={6}/>
+
       </div>
     </div>
   );

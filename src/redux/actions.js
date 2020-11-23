@@ -66,7 +66,7 @@ export const loadExporters = () => {
 };
 
 export const addProduct = (newProductInfo) => {
-  console.log('ADD_PRODUCT');
+  // console.log('ADD_PRODUCT');
    
   return {
     type: ADD_PRODUCT,

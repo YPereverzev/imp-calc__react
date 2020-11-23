@@ -11,8 +11,6 @@ import {
 import { loadExchangeRates } from '../../redux/actions';
 
 const ExchangeRates = ({ loadExchangeRates, exchangeRates, loaded, loading, loadingError }) => {
-  console.log('exchangeRates', exchangeRates);
-
   useEffect(() => {
     if (!loaded) loadExchangeRates();
   }, []); //eslint-disable-line

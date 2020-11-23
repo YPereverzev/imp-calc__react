@@ -9,11 +9,11 @@ const initialState = {
 };
 
 export default (state = initialState, action) => {
-  const { type, payload, feedbackId, userId } = action;
+  const { type, payload, feedbackId } = action;
 
   switch (type) {
     case ADD_FEEDBACK:
-      const { exporterId, name, review } = payload;
+      const { exporterId } = payload;
       let changedExporter = state.find((item) => item.id === exporterId.id);
       const changedExporterIndex = state.indexOf(changedExporter);
       const newImportItems = [...state];
