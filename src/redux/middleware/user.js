@@ -3,7 +3,6 @@ import { v4 as uuidv4 } from 'uuid';
 
 export const user = (store) => (next) => (action) => {
   const { type /*payload*/ } = action;
-  console.log('uuidv4(): ', uuidv4());
 
   switch (type) {
     // case ADD_NEW_USER:

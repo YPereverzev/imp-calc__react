@@ -6,6 +6,13 @@ import styles from './ordereditems.module.css';
 import Plus from './icons/plus.svg';
 import Minus from './icons/minus.svg';
 import Delete from './icons/delete.svg';
+import {
+  paymentBeforeTaxes,
+  dutyCalc,
+  vatCalc,
+  paymentPlusTaxes,
+  qtyHandler
+} from './logics';
 
 function OrdereditemsOrder({ item, qty, increment, decrement, clearPosition }) {
   return (
@@ -39,7 +46,7 @@ function OrdereditemsOrder({ item, qty, increment, decrement, clearPosition }) {
 
       <div className={styles.summary}>
         <p className={styles.item}>
-          <b>${qty * item.pricePerPc} $</b>
+          <b>${paymentBeforeTaxes(qty, item)} $</b>
         </p>
         <button
           className={`${styles.item} ${styles.delete_button}`}
@@ -54,33 +61,12 @@ function OrdereditemsOrder({ item, qty, increment, decrement, clearPosition }) {
       <div className={styles.vat}>НДС: {vatCalc(qty, item).toFixed(2)} $</div>
 
       <div className={styles.payment}>
-        <b>Итого: ${paymentPlasTaxes(qty, item).toFixed(2)}</b>
+        <b>Итого: ${paymentPlusTaxes(qty, item).toFixed(2)}</b>
       </div>
     </div>
   );
 }
 
-export const paymentBeforeTaxes = (qty, item) => {
-  return qty * item.pricePerPc;
-};
-
-export const dutyCalc = (qty, item) => {
-  return (qty * item.pricePerPc * item.duty) / 100;
-};
-
-export const vatCalc = (qty, item) => {
-  return (dutyCalc(qty, item) + paymentBeforeTaxes(qty, item)) * (item.vat / 100);
-};
-
-export const paymentPlasTaxes = (qty, item) => {
-  return dutyCalc(qty, item) + vatCalc(qty, item) + qty * item.pricePerPc;
-};
-
-export const qtyHandler = (event) => {
-  console.log(event);
-  // event.target.contenteditable="true";
-  // contenteditable="true | false"
-};
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -89,12 +75,5 @@ const mapDispatchToProps = (dispatch) => {
     clearPosition: (id) => dispatch(clearPosition(id)),
   };
 };
-
-// const mapStateToProps = (state) => {
-//     return {
-//         order : state.order
-//         // importItems: state.importItems
-//     }
-// };
 
 export default connect(null, mapDispatchToProps)(OrdereditemsOrder);

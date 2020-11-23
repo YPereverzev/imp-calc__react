@@ -12,16 +12,16 @@ function ImportedItems(props) {
 
       <div className={styles.volume_weight_container}>
         <div className={styles.volume}>
-          <p>Объем:{props.item.volumePerPc} м3/шт </p>
+          <p>Объем: {props.item.volumePerPc} м3/шт </p>
           <p>
-            <b>Итого :{(props.item.volumePerPc * props.order).toFixed(1)} м3</b>
+            <b>Итого: {(props.item.volumePerPc * props.order).toFixed(1)} м3</b>
           </p>
         </div>
         <div className={styles.space}></div>
         <div className={styles.weight}>
-          <p>Вес:{props.item.weightPerPc} кг/шт </p>
+          <p>Вес: {props.item.weightPerPc} кг/шт </p>
           <p>
-            <b>Итого :{(props.item.weightPerPc * props.order).toFixed(1)}* кг</b>
+            <b>Итого: {(props.item.weightPerPc * props.order).toFixed(1)}* кг</b>
           </p>
         </div>
       </div>

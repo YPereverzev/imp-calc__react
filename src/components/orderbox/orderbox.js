@@ -5,6 +5,11 @@ import OrderedItems from './ordereditems';
 import styles from './order-box.module.css';
 import { orderBoxSelector } from '../../redux/reducer/selectors';
 import { Link } from 'react-router-dom';
+import {
+  paymentPlusTaxes
+} from '../importedItems/ordereditemsorder/logics';
+
+
 
 function OrderBox(props) {
   return (
@@ -33,9 +38,9 @@ function OrderBox(props) {
           <h4>
             Итого к оплате:{' '}
             {props.orderedItemsForNow.reduce(
-              (sum = 0, item = 0) => sum + item.pricePerPc * props.order[item.id],
+              (sum, item) => sum + paymentPlusTaxes(props.order[item.id], item),
               0,
-            )}{' '}
+            ).toFixed(2)}{' '}
             {` `}
             долл
           </h4>
@@ -46,7 +51,5 @@ function OrderBox(props) {
 }
 
 export default connect((state) => {
-  console.log('connect OrderBox');
-
   return { orderedItemsForNow: orderBoxSelector(state), order: state.order };
 })(OrderBox);

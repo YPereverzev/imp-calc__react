@@ -7,7 +7,6 @@ import { productsAlreadyLoadedSelector, allExportersSelector } from '../../redux
 import styles from './addproduct.module.css';
 
 const AddProduct = ({ activeExporter, addProduct, state, products, exporters }) => {
-  console.log(state);
   return (
     <div className={styles.wrapper}>
       Добавление новой позиции к поставщику:
@@ -124,8 +123,6 @@ const AddProduct = ({ activeExporter, addProduct, state, products, exporters }) 
 };
 
 const addNewProductHandler = (addProduct, activeExporter, products, exporters) => {
- 
-  console.log('addNewProductHandler');
   const newProductName = document.getElementById('newProductName').value;
   const newProductVolume = +document.getElementById('newProductVolume').value;
   const newProductWeight = +document.getElementById('newProductWeight').value;

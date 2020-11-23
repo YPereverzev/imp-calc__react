@@ -29,7 +29,7 @@ class App extends Component {
   render() {
     if (this.props.loading || !this.props.loaded) return <Loader />;
     return (
-      <div class="container-xl p-0">
+      <div className={`container-xl p-0 `}>
         <div className={`${styles.header_container}`}>
           <div className={styles.header}>
             <div className={styles.name}>

@@ -76,7 +76,7 @@ const vatCalc = (qty, item) => {
 };
 
 const qtyHandler = (event) => {
-  console.log(event);
+  // console.log(event);
   // event.target.contenteditable="true";
   // contenteditable="true | false"
 };
