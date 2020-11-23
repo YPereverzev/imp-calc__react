@@ -10,7 +10,7 @@ const SearchedImporters = (props) => {
       <div className={styles.searchedImporters} >
         <form className={styles.searchedImporters_form} method="post">
           <select
-            class="custom-select"
+            className="custom-select"
             multiple
             name="serchedImporters"
           >

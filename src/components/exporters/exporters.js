@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navigation from '../navigation';
 import Exporter from '../exporter';
 import PropTypes from 'prop-types';
@@ -20,16 +20,16 @@ function Exporters({ exporters, loaded, loadProducts, match, history }) {
 
   return (
     <div className={styles.exporters}>
-      <div class="container p-0">
-        <div class="row p-0">
-          <div class="col p-0">
+      <div className="container p-0">
+        <div className="row p-0">
+          <div className="col p-0">
             <Navigation exporters={exporters} onImporterClick={setActiveExporter} />
           </div>
 
-          <div class="col-lg-6 p-0">
+          <div className="col-lg-6 p-0">
             <Exporter activeExporterId={activeExporterId} />
           </div>
-          <div class="col p-0">
+          <div className="col p-0">
             <OrderBox />
           </div>
         </div>
