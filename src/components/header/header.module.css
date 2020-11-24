@@ -1,0 +1,15 @@
+.header_container {
+    position: relative;
+  }
+
+  .header {
+    background: linear-gradient(to right, #ddd, #777);
+    padding-right: 200px;
+  }
+
+  .name {
+    left: 30px;
+    display: inline-block;
+    margin: 30px;
+    color: black;
+  }
