@@ -3,25 +3,11 @@
   margin: 0 auto;
 }
 
-.header_container {
-  position: relative;
-}
 
-.header {
-  background: linear-gradient(to right, #ddd, #777);
-  padding-right: 200px;
-}
-
-.name {
-  left: 30px;
-  display: inline-block;
-  margin: 30px;
-  color: black;
-}
 
 button {
-  border: solid 1px white;
-  outline: none;
+  border: solid 1px white !important;
+  outline: none !important;
   border-radius: 2px !important;
   background-color: #bbb;
 }
@@ -31,8 +17,6 @@ button:focus {
   color: #ddd !important;
   border: solid 1px black !important;
   background-color: #aaa !important;
-
-  /* color: #fff; */
 }
 
 button:hover {

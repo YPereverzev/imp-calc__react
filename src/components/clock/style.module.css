@@ -1,0 +1,13 @@
+.workingTimeIsOver {
+    color: tomato;
+}
+
+.currentTime {
+    display: inline-block;
+    padding-left: 10px;
+}
+
+.location {
+    width: 75px;
+    display: inline-block;
+}

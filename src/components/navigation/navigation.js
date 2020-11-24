@@ -12,7 +12,7 @@ function Navigation(props) {
         <p>Поставщики:</p>
         <Search exporters={props.exporters} onImporterClick={props.onImporterClick} />
         <Clock id={'Ukraine'} loacation={`Украина`} timeShift={0}/>
-        <Clock id={'USA'} loacation={`США`} timeShift={-5}/>
+        <Clock id={'USA'} loacation={`США, зап`} timeShift={-5}/>
         <Clock id={'EU'} loacation={`Европа`} timeShift={1}/>
         <Clock id={'China'} loacation={`Китай`} timeShift={6}/>
 

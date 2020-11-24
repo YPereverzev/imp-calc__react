@@ -2,8 +2,9 @@ import 'normalize.css';
 import React, { Component } from 'react';
 import Exporters from './exporters';
 import OrderBox from './orderbox';
-import ExchangeRates from './exchangeRates';
 import Loader from './loader';
+import Header from '../components/header';
+
 import { loadExporters } from '../redux/actions';
 
 import {
@@ -14,9 +15,10 @@ import {
   exportersLoadingErrorSelector,
 } from '../redux/reducer/selectors';
 
-import styles from '../app.module.css';
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
+
+// import { styles } from '../app.module.css';
 
 class App extends Component {
   constructor(props) {
@@ -30,14 +32,7 @@ class App extends Component {
     if (this.props.loading || !this.props.loaded) return <Loader />;
     return (
       <div className={`container-xl p-0 `}>
-        <div className={`${styles.header_container}`}>
-          <div className={styles.header}>
-            <div className={styles.name}>
-              <h1>Сustoms Сlearance Сalculator</h1>
-            </div>
-            <ExchangeRates />
-          </div>
-        </div>
+        <Header />
 
         <Route path="/orderDetail" component={OrderBox}></Route>
         <Route path="/" exact component={Exporters}></Route>
