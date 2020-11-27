@@ -18,7 +18,7 @@ import {
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 
-// import { styles } from '../app.module.css';
+import { styles } from '../app.module.css';
 
 class App extends Component {
   constructor(props) {
