@@ -4,6 +4,7 @@ export const CLEARPOSITION = 'CLEARPOSITION';
 export const ADD_NEW_USER = 'ADD_NEW_USER';
 export const ADD_FEEDBACK = 'ADD_FEEDBACK';
 export const ADD_PRODUCT = 'ADD_PRODUCT';
+export const ADD_NEW_EXPORTER = 'ADD_NEW_EXPORTER';
 
 export const LOAD_EXCHANGE_RATES = 'LOAD_EXCHANGE_RATES';
 export const LOAD_PRODUCTS = 'LOAD_PRODUCTS';

@@ -5,10 +5,12 @@ import { addProduct } from '../../redux/actions';
 import { productsAlreadyLoadedSelector, allExportersSelector } from '../../redux/reducer/selectors';
 
 import styles from './addproduct.module.css';
+import globalStyles from '../../globalstyles.module.css';
+
 
 const AddProduct = ({ activeExporter, addProduct, state, products, exporters }) => {
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.AddProduct} ${globalStyles.card_wrapper}`}>
       Добавление новой позиции к поставщику:
       <p>
         <b>"{activeExporter.exporterName}"</b>
@@ -26,6 +28,7 @@ const AddProduct = ({ activeExporter, addProduct, state, products, exporters }) 
           aria-describedby="basic-addon1"
         ></input>
       </div>
+
       <div className={styles.block_wrapper}>
         <div className={styles.block}>
           <div className="input-group input-group-sm mb-3">
@@ -52,6 +55,7 @@ const AddProduct = ({ activeExporter, addProduct, state, products, exporters }) 
           </div>
         </div>
       </div>
+
       <div className={styles.block_wrapper}>
         <div className={styles.block}>
           <div className="input-group input-group-sm mb-3">
@@ -77,6 +81,7 @@ const AddProduct = ({ activeExporter, addProduct, state, products, exporters }) 
           </div>
         </div>
       </div>
+
       <div className={styles.block_wrapper}>
         <div className={styles.block}>
           <div className="input-group input-group-sm mb-3">
@@ -96,6 +101,7 @@ const AddProduct = ({ activeExporter, addProduct, state, products, exporters }) 
           </div>
         </div>
       </div>
+      
       <div className={styles.block_wrapper}>
         <div className={styles.price}>
           <div className="input-group input-group-sm mb-3">

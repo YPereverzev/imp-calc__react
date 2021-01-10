@@ -7,6 +7,7 @@ import styles from './exporter.module.css';
 import { activeExporterSelector } from '../../redux/reducer/selectors';
 import { connect } from 'react-redux';
 import AddProduct from '../addproduct/addproduct';
+import AddExporter from '../addexporter';
 
 function Exporter(props) {
   const [selectedСomponent, setSelectedСomponent] = useState('Products');
@@ -25,6 +26,9 @@ function Exporter(props) {
 
             case 'Feedbacks':
               return <Feedbacks activeExporter={props.activeExporter} />;
+
+            case 'AddExporter':
+              return <AddExporter activeExporter={props.activeExporter} />;
 
             case 'AddProduct':
               return <AddProduct activeExporter={props.activeExporter} />;

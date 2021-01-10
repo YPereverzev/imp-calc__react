@@ -8,7 +8,7 @@ type ChoiceProps = {
 
 
 const Choice: React.FC<ChoiceProps> = ({ setComponent }) => {
-  debugger
+  
   return (
     <div className={styles.choice}>
       <button className={styles.button} onClick={() =>  setComponent('Products')}>
@@ -23,9 +23,9 @@ const Choice: React.FC<ChoiceProps> = ({ setComponent }) => {
         Добавить экпортера
       </button>
 
-      <button title='в разработке' className={styles.button} onClick={() => setComponent('Feedbacks')}>
+      {/* <button title='в разработке' className={styles.button} onClick={() => setComponent('Feedbacks')}>
         Фидбек
-      </button>
+      </button> */}
 
     </div>
   );

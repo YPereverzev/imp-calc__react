@@ -23,3 +23,8 @@ button:hover {
   background-color: #888 !important;
   color: #ddd !important;
 }
+
+.card-wrapper {
+  color: yellow;
+}
+

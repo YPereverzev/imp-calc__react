@@ -1,6 +1,9 @@
 import { createSelector } from 'reselect';
 
 // const selectImportItems = state => state.importItems;
+
+// type LowLevelSelector<State> = <Keys extends keyof State>(state: State, key: Keys) => state.key;
+
 const orderSelector = (state) => state.order;
 const productsSelector = (state) => state.products.entities;
 export const usersSelector = (state) => state.users;
@@ -44,8 +47,9 @@ export const allExportersSelector = (state) => {
 };
 
 const idSelector = (_, ownProps) => {
-  return ownProps.activeExporter.id;
+  return ownProps?.activeExporter?.id;
 };
+
 export const exporterSelector = createSelector(
   allExportersSelector,
   idSelector,

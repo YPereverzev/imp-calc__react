@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-// import { decrement, increment } from '../../redux/actions';
 import styles from './Importeditems.module.css';
 import OrdereditemsOrder from './ordereditemsorder';
 
+import globalStyles from '../../globalstyles.module.css';
+
 function ImportedItems(props) {
   return (
-    <div className={styles.importedItems} data-test-id="ImportedItems">
+    <div className={`${styles.importedItems} ${globalStyles.card_wrapper}`} data-test-id="ImportedItems">
       <OrdereditemsOrder item={props.item} qty={props.order} />
 
       <div className={styles.volume_weight_container}>
@@ -51,13 +52,6 @@ ImportedItems.propType = {
     decrement: PropTypes.func.isRequired,
   }).isRequired,
 };
-
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         increment: (id) => dispatch(increment(id)),
-//         decrement: (id) => dispatch(decrement(id))
-//     }
-// }
 
 const mapStateToProps = (state, ownProps) => {
   return {

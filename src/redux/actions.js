@@ -9,9 +9,10 @@ import {
   LOAD_EXPERIENCE,
   LOAD_EXPORTERS,
   ADD_PRODUCT,
+  ADD_NEW_EXPORTER,
 } from './constants';
 
-export const increment = (id) => ({ type: INCREMENT, payload: { id } });
+export const  increment = (id) => ({ type: INCREMENT, payload: { id } });
 export const decrement = (id) => ({ type: DECREMENT, payload: { id } });
 export const clearPosition = (id) => ({ type: CLEARPOSITION, payload: { id } });
 export const addNewUser = (feedback) => ({
@@ -66,11 +67,24 @@ export const loadExporters = () => {
 };
 
 export const addProduct = (newProductInfo) => {
-  // console.log('ADD_PRODUCT');
-   
   return {
     type: ADD_PRODUCT,
     payload: newProductInfo,
     generateId: ['id'],
   };
 };
+
+
+export const addNewExporter = (newExporterInfo) => {
+  return {
+    type: ADD_NEW_EXPORTER,
+    payload: newExporterInfo,
+    generateId: ['id'],
+  }
+}
+
+// interface {
+//   type: string;
+//   payload: any;
+//   generateId?: any;
+// }

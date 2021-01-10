@@ -1,0 +1,12 @@
+.card_wrapper {
+    margin: 20px;
+    background-color: #eee;
+    padding: 20px;
+    border-radius: 7px;
+  }
+  
+  .button {
+    margin-right: 5px;
+    border-radius: 5px;
+    background-color: #bbb;
+  }

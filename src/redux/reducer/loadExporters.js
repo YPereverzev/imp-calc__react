@@ -1,5 +1,12 @@
 import produce from 'immer';
-import { LOAD_EXPORTERS, SUCCESS, REQUEST, FAILURE, ADD_PRODUCT } from '../constants';
+import { 
+  LOAD_EXPORTERS, 
+  SUCCESS, 
+  REQUEST, 
+  FAILURE, 
+  ADD_PRODUCT,
+  ADD_NEW_EXPORTER,
+} from '../constants';
 
 const initialState = {
   loading: false,
@@ -37,84 +44,18 @@ export default (state = initialState, action) =>
       case ADD_PRODUCT: {
          
         const exactExporter = state.entities.findIndex((item) => {
-           
           return payload.activeExporter.id === item.id;
         });
 
         draft.entities[exactExporter].products = [...draft.entities[exactExporter].products, id];
-        // : {
-        //     ...state.entities[exactExporter],
-        // state.entities[exactExporter].products: [
-        //     ...state.entities[exactExporter].products,
-
-        //     id
-        // ]
-        // }
         break;
       }
 
+      case ADD_NEW_EXPORTER: {
+        
+      }
+
       default:
-        return;
+        return state;
     }
   });
-
-// export default (state = initialState, action) => {
-
-//     const { type, exportersResponse, error, id, payload } = action;
-
-//     switch (type) {
-//         case LOAD_EXPORTERS + REQUEST:
-
-//             return {
-//                 ...state,
-//                 loading: true,
-//                 loaded: false,
-//                 error: null
-//             };
-
-//         case LOAD_EXPORTERS + FAILURE:
-//             return {
-//                 ...state,
-//                 loading: false,
-//                 loaded: false,
-//                 error: error
-//             };
-
-//         case LOAD_EXPORTERS + SUCCESS:
-//             return {
-//                 ...state,
-//                 loading: false,
-//                 loaded: true,
-//                 error: null,
-//                 entities: [ ...exportersResponse ]
-//             };
-//         case ADD_PRODUCT:
-//              
-
-//             const exactExporter = state.entities.findIndex((item) => {
-//                  
-//                 return payload.activeExporter.id === item.id;
-//             })
-//             return {
-//                 ...state,
-//                 loading: false,
-//                 loaded: true,
-//                 error: null,
-//                 entities: [
-//                     ...state.entities,
-//                     state.entities[exactExporter]) : newExporter
-//                     // : {
-//                     //     ...state.entities[exactExporter],
-//                         // state.entities[exactExporter].products: [
-//                         //     ...state.entities[exactExporter].products,
-
-//                         //     id
-//                         // ]
-//                     // }
-//                 ]
-//             };
-//         default:
-//             return state;
-//     }
-
-// }
