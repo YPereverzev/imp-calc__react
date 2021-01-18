@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { addNewExporter } from '../../redux/actions';
 
@@ -17,33 +17,16 @@ interface INewExporterInfo {
 
 }
 
-interface addNewExporterHandlerAction{
-  type?: string;
-  payload: any;
-  generateId?: any;
-}
-
-const addNewExporterHandler = (addNewExporter: any): INewExporterInfo => {
-  const newExporterName: string = document.getElementById('newExporterName')?.nodeValue as string;
-  const newExporterLocation: string = document.getElementById('newExporterLocation')?.nodeValue as string;
-  console.log('123');
-  
-  return {
-    id: null,
-    exporterName: newExporterName,
-    location: newExporterLocation,
-  }
-}
-
 export interface AddExporterProps {
   activeExporter?: string;
   addNewExporter: React.ReactNode;
 }
 
-const AddExporter: React.FC = (props) => {
-//   props: 
-// activeExporter
-// addNewExporter
+const AddExporter: React.FC = (props: any) => {
+    const {addNewExporter} = props;
+    const [newExporterName, setNewExporterName] = useState('');
+    const [newExporterLocation, setnewExporterLocation] = useState('');
+
     return (
         <div className={globalStyles.card_wrapper}>
           Добавление нового поставщика:
@@ -59,6 +42,7 @@ const AddExporter: React.FC = (props) => {
               className="form-control"
               id="newExporterName"
               aria-describedby="basic-addon1"
+              onChange={(e) => setNewExporterName(e.currentTarget.value)}
             ></input>
 
             <div className={styles.newProductName}
@@ -70,23 +54,25 @@ const AddExporter: React.FC = (props) => {
             <div className="input-group-prepend">
               <span className="input-group-text">Локация</span>
             </div>
-            <input type="text" className="form-control" id="newExporterLocation"></input>
+            <input 
+              type="text" 
+              className="form-control" 
+              id="newExporterLocation"
+              onChange={(e) => setnewExporterLocation(e.currentTarget.value)}
+            ></input>
           </div>
 
           <button
             type="button"
             className="btn btn-secondary btn-sm"
-            id="addNewProductBtn"
-            onClick={() => addNewExporterHandler(addNewExporter)}
+            id="addNewExporterBtn"
+            onClick={() => addNewExporter({ newExporterName, newExporterLocation })}
           >
             Добавить
         </button>
         </div>
     );
 };
-
-
-
 
 const mapDispatchToProps = (dispatch: any) => {
   return {

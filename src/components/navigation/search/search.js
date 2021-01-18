@@ -1,17 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useReducer, useState } from 'react';
 import styles from './search.module.css';
 import SearchedImporters from '../searchedimporters';
 import SearchIcon from './icon/search.svg';
+import { 
+  exportersAlreadyLoadedSelector,
+  exportersLoadedSelector,
+} from '../../../redux/reducer/selectors'
+import { connect } from 'react-redux';
 
-const Search = ({ exporters, onImporterClick }) => {
-  const [filteredImporters, setFilteredImporters] = useState(exporters);
-
-  useEffect(() => {
-    const search = document.getElementById('search');
-    search.addEventListener('change', (event) => {
-      searchHandler(event, setFilteredImporters, exporters);
-    });
-  });
+const Search = ({ onImporterClick, exporters }) => {
+  const [searchName, setSearchName] = useState('')
 
   return (
     <div className={styles.search}>
@@ -25,22 +23,19 @@ const Search = ({ exporters, onImporterClick }) => {
         <input
           className={styles.search_field}
           id="search"
-          // type="search"
           placeholder="найти поставщика"
+          onChange={(event)=> setSearchName(event.currentTarget.value)}
+          autocomplete="off"
         ></input>
       </div>
-      <SearchedImporters exporters={filteredImporters} onImporterClick={onImporterClick} />
+      <SearchedImporters searchName={searchName} exporters={exporters} onImporterClick={onImporterClick} />
     </div>
   );
 };
 
-const searchHandler = (event, setFilteredImporters, exporters) => {
-  if (!event) return exporters;
+const mapStateToProps = (state) => ({
+    exporters: exportersAlreadyLoadedSelector(state),
+    loaded: exportersLoadedSelector(state),
+});
 
-  const filteredExporters = exporters.filter((item) => {
-    return item.exporterName.includes(event.target.value);
-  });
-  return setFilteredImporters((state) => filteredExporters);
-};
-
-export default Search;
+export default connect(mapStateToProps)(Search);

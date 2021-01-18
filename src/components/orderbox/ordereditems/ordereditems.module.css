@@ -1,8 +1,9 @@
 .ordereditems {
+  font-size: 0.9em;
   margin: 0px 0px 15px 0px;
-  padding: 5px;
+  padding: 20px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   line-height: 1em;
   background-color: #ccc;
   border-radius: 5px;
@@ -12,10 +13,21 @@
 
 .name {
   text-align: left;
-  grid-column-start: 1;
+  /* grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 1;
-  grid-row-end: 4;
+  grid-row-end: 6; */
+}
+
+.imaga {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 6;
+}
+
+.price {
+  font-weight: bold;
 }
 
 .item {
@@ -69,4 +81,17 @@
   position: absolute;
   top: 6px;
   left: 4px;
+}
+
+.duty {
+  vertical-align: middle;
+  line-height: 2em;
+  text-align: right;
+
+}
+
+.totalPayment {
+  vertical-align: middle;
+  line-height: 2em;
+  text-align: right;
 }

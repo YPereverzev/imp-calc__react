@@ -52,7 +52,21 @@ export default (state = initialState, action) =>
       }
 
       case ADD_NEW_EXPORTER: {
-        
+          const newExporter = {
+              id: id,
+              exporterName: payload.newExporterName,
+              location: payload.newExporterLocation,
+              image: payload.newImage,
+              products: [],
+              experience: [],
+          };
+          return {
+              ...state,
+              entities: [
+                ...state.entities,
+                newExporter
+              ]
+            }
       }
 
       default:

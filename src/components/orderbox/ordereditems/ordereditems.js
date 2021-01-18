@@ -13,10 +13,19 @@ import Plus from './icons/plus.svg';
 import Minus from './icons/minus.svg';
 import Delete from './icons/delete.svg';
 
-function Ordereditems({ item, qty, increment, decrement, clearPosition }) {
+function Ordereditems({ item, qty, increment, decrement, clearPosition, pricePerPc }) {
+
   return (
     <div className={styles.ordereditems}>
-      <div className={styles.name}>{item.nameOfPc}:</div>
+      <div className={styles.name}>{item.nameOfPc} </div>
+
+      <div className={styles.imaga}>
+        image
+      </div>
+
+      <div className={styles.price}>
+        {item.pricePerPc} usd/pc
+      </div>
 
       <div className={styles.editing}>
         <div className={`${styles.item} + ${styles.qty}`} onClick={qtyHandler}>
@@ -39,8 +48,6 @@ function Ordereditems({ item, qty, increment, decrement, clearPosition }) {
         </div>
       </div>
 
-      {/* <div></div> */}
-
       <div className={styles.summary}>
         <p className={styles.item}>
           <b>{qty * item.pricePerPc} $</b>
@@ -53,8 +60,7 @@ function Ordereditems({ item, qty, increment, decrement, clearPosition }) {
         </button>
       </div>
       <div className={styles.duty}>налоги: {allTaxes(qty, item).toFixed(2)} $</div>
-      <div></div>
-      <div>Итого: {(allTaxes(qty, item) + paymentBeforeTaxes(qty, item)).toFixed(2)} $</div>
+      <div className={styles.totalPayment}>Итого: {(allTaxes(qty, item) + paymentBeforeTaxes(qty, item)).toFixed(2)} $</div>
     </div>
   );
 }

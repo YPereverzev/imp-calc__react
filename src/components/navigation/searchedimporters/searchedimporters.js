@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './searchedimporters.module.css';
 import Loader from '../../loader';
 
-const SearchedImporters = (props) => {
-  if (!props.exporters[0]) return <Loader />;
+const SearchedImporters = ({exporters, onImporterClick, searchName }) => {
 
   return (
     <div data-test="SearchedImporters">
+
       <div className={styles.searchedImporters} >
         <form className={styles.searchedImporters_form} method="post">
           <select
@@ -14,9 +14,12 @@ const SearchedImporters = (props) => {
             multiple
             name="serchedImporters"
           >
-            {props.exporters.map((item) => {
+            {exporters.filter((item) => {
+              return item.exporterName.toLowerCase().includes(searchName.toLowerCase());
+            })
+            .map((item) => {
               return (
-                <option key={item.id} onClick={() => props.onImporterClick(item.id)}>
+                <option key={item.id} onClick={() => onImporterClick(item.id)}>
                   {item.exporterName}
                 </option>
               );
